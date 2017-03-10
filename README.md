@@ -7,4 +7,4 @@ Proiect TI-P 2017 Studenti:
 * Dimitriu Petru
 * Ghiuzan Adelina
 * Bulai Monalisa
-* Pirau Ionut
+* Pirau Ionut Alexandru
