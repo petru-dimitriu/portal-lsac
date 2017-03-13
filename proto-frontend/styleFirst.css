@@ -1,0 +1,16 @@
+body {
+  background: url('background.jpg');
+  background-size: cover;
+}
+#bigTitle {
+  font-family: RobotoBold;
+  font-size: 500%;
+  color: white;
+  line-height: 95%;
+  text-align: right;
+  position: absolute;
+  bottom: 10%;
+  right: 1vw;
+  max-width: 90%;
+  background-color: rgba(5, 5, 171, 0.9);
+}
