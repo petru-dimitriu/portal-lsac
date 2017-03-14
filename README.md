@@ -9,8 +9,16 @@ Parte din proiectul pentru disciplina Tehnologii Internet - Proiect realizat de 
 * Ionuț Alexandru Pîrău
 
 ###Descrierea proiectului
-Proiectul a fost gândit cu motivul de a ușura viața studenților care sunt membri ai Ligii Studenților Facultății de Automatică și Calculatoare,având 
-posibilitatea de a aduce noi facilități site-ului(ex: fiecare membru poate fi activ pe site, având șansa de a-și încărca propriile fotografii,de a vota atunci 
-când dorește și a-și promova propriile articole dacă îi sunt acceptate de admin).
-Din momentul accesării site-ului,în funcție de ce tip de utilizator este, acesta poate vizita anumite secțiuni.De exemplu,un utilizator normal, poate doar citi 
-articolele; un utilizator activ trebuie să se logheze pentru a putea citi și scrie articole noi sau de a vota atunci când este cazul.
+Scopul proiectului este realizarea unui portal web care să faciliteze colaborarea, comunicarea și diseminarea informațiilor între membrii Ligii Facultătii de Automatică și Calculatoare din Iași. 
+  
+Se dorește a fi un portal comprehensiv, compus (cel puțin) din module pentru scrierea și împărtășirea articolelor, unul pentru realizarea de sondaje online și unul pentru menținerea unui depozit online de fișiere de interes pentru membrii Ligii (în principal fotografii și documente). 
+  
+Fiecare utilizator deține un blog personal, unde poate publică articole. Articolele pot fi promovate de un administrator pe prima pagină. 
+  
+Există o primă pagină pentru utilizatorii autentificati și una pentru public. Doar o parte din articole sunt accesibile publicului larg. 
+  
+Sondajele sunt pornite doar de către admini, sunt constrânse de timp și pot fi accesate doar de către membrii autentificati. 
+  
+Înscrierea și promovarea membrilor se face doar de către administratori. 
+  
+Mai multe detalii punctuale se găsesc în fișierul SPECS.md. 
