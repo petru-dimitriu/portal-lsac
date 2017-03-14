@@ -43,7 +43,7 @@
 ## Albume
 * Fiecare utilizator poate încărca fotografii pe site, pentru a le include în articole, ca parte din funcționalitatea depozitului de fișiere.
 * Fiecare utilizator își poate șterge propriile fotografii.
-* Articolele pot fi grupate în albume de către admini.
+* Fotografiile pot fi grupate în albume de către admini.
 * Albumele pot fi interne sau publice.
 
 ## Depozit de fișiere
