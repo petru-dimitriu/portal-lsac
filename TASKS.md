@@ -6,8 +6,8 @@
 | Schelet preliminar site | Petru |
 | Script-uri BD pentru tabel USERS | Mona |
 | Sesiuni (să meargă login / logout) | Ade |
-| Schelet preliminar panou admin | |
-| Înscrierea utilizatorilor (pagină admin pentru asta + prima logare) | |
+| Schelet preliminar panou admin | Petru |
+| Înscrierea utilizatorilor (pagină admin pentru asta + prima logare) | Petru |
 | Pagina utilizatorului | Ade |
 | Editarea informațiilor utilizatorului | Mona |
 | Încărcare foto utilizator | Mona |
