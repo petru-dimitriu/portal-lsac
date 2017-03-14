@@ -3,7 +3,7 @@ Prototip portal realizat pentru site-ul Ligii Studenților Facultății de Autom
 
 Parte din proiectul pentru disciplina Tehnologii Internet - Proiect realizat de studenții:
 
-* Petru Dimitriu
+* **Petru Dimitriu**
 * Adelina Ghiuzan
 * Monalisa Bulai
 * Ionuț Alexandru Pîrău
