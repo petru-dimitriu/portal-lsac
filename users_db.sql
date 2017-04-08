@@ -1,0 +1,1 @@
+create table USERS (id_user number(7),name varchar2(20) NOT NULL, password varchar2(20) NOT NULL, email varchar2(30) NOT NULL, entryDate date, constraint id_user_pk primary key(id_user));
