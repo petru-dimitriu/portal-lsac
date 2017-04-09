@@ -1,3 +1,5 @@
+<%@page import="connection.*, java.sql.*" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -23,17 +25,21 @@
                     Autentificare
               </div>
               <br>
-                  <form method = "post">
+             
+                  <form method = "post" action="LoginSession">
+                  ${mesaj} 
                     <div class="form-group">
 				      <p>Nume</p>
-				      <input class="form-control" id="inputdefault" type="text">
+				      <input class="form-control" name="username" id="inputdefault" type="text">
 				    </div>
 				    
                     <div class="form-group">
 				      <p>Parola</p>
-				      <input class="form-control" id="inputdefault" type="password">
+				      <input class="form-control" name="password" id="inputdefault" type="password">
 				    </div>
                     <button type="submit" class="btn btn-primary">Login</button>
+                    
+                    
                     
                     </form>
           

@@ -14,7 +14,8 @@
 	
       <%@ include file= "header.jsp" %>
       
-      
+      <h3>Welcome ${sessionScope.username}</h3>
+      <a href="LoginSession">Logout</a>
 
       <%@ include file= "main.jsp" %>
       
