@@ -18,7 +18,6 @@
 	
 	  <%@ include file= "menu.jsp" %>
       
-      <%@ include file= "user_log.jsp" %>
       <div id="login_form">
           <div id = "innerBodyLogin">
               <div id = "title" >
