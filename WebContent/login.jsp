@@ -5,26 +5,50 @@
   <head>
     <title> Liga Studenților Facultății de Automatică și Calculatoare din Iași </title>
     <link href ="style/css/style.css" rel ="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
     <div id = "body">
-      <div id = "upperNavBar">
-        <p>
-          LSAC Iași
-        </p>
-      </div>
+     
+	
+	
+	  <%@ include file= "menu.jsp" %>
       
-      <div id = "innerBody">
-      <div id = "title" >
-        Autentificare
-      </div>
-      <form method = "post">
-        <p> Nume: <br/> <input type="text"></input> </p>
-        <p> Parolă: <br/> <input type="password"></input> </p>
-        <p> <input type="submit" value="Autentificare"></p>
-        <p> Nu ești înregistrat? Înregistrarea se face de către administratorul site-ului și este disponibilă doar pentru membrii LSAC.</p>
-        </form>
-      </div>
+      <%@ include file= "user_log.jsp" %>
+      <div id="login_form">
+          <div id = "innerBodyLogin">
+              <div id = "title" >
+                    Autentificare
+              </div>
+              <br>
+                  <form method = "post">
+                    <div class="form-group">
+				      <p>Nume</p>
+				      <input class="form-control" id="inputdefault" type="text">
+				    </div>
+				    
+                    <div class="form-group">
+				      <p>Parola</p>
+				      <input class="form-control" id="inputdefault" type="password">
+				    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    
+                    </form>
+          
+          </div>
+    </div>
+    
+    <footer>
+    <div id = "innerBody">
+    <p align="center"> Nu ești înregistrat? Înregistrarea se face de către <a href="#">administratorul</a> site-ului și este disponibilă doar pentru membrii LSAC.</p>
+        </div>
+    </footer>
+    
   </div>
+ 
+  
+   
   </body>
 </html>
