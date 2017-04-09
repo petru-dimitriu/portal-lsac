@@ -1,4 +1,4 @@
-<div id = "upperNavBar">
+﻿<div id = "upperNavBar">
         <p>
           LSAC Iași
         </p>

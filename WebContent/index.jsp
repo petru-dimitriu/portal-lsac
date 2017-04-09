@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Liga Studen?ilor Faculta?ii de Automatica ?i Calculatoare din Ia?i </title>
+    <title> Liga Studenților Facultății de Automatică și Calculatoare din Iași </title>
     <meta charset="utf-8">
     <link href ="style/css/style.css" rel ="stylesheet">
   </head>
