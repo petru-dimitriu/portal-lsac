@@ -25,7 +25,7 @@ public class SqlConnection {
 			}
 		}
 		
-		public boolean getData(String uname, String pw){
+		public boolean isUserPresentInDatabase(String uname, String pw){
 			try{
 				
 				String query = "select * from users";
