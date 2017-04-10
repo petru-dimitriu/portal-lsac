@@ -23,7 +23,7 @@ public class sqlConnection {
 				
 				String query = "select * from users";
 				rs = st.executeQuery(query);
-				System.out.println("Interogare DB");
+				//System.out.println("Interogare DB");
 				while(rs.next()){
 					String name = rs.getString("name");
 					String parola = rs.getString("password");

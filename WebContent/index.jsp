@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Liga StudenÈilor FacultÄÈii de AutomaticÄ Èi Calculatoare din IaÈi </title>
+    <title> Liga Studenților Facultății de Automatică și Calculatoare din Iași </title>
     <meta charset="utf-8">
     <link href ="style/css/style.css" rel ="stylesheet">
     <link href ="style/css/styleFirst.css" rel="stylesheet">
@@ -11,7 +11,7 @@
   <body>
     <%@ include file= "menu.jsp" %>
       <div id = "bigTitle">
-        Liga are un nou portal web, realizat integral de studenÈi ai FacultÄÈii
+        Liga are un nou portal web, realizat integral de studenți ai Facultății
       </div>
   </body>
 </html>

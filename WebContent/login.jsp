@@ -13,38 +13,44 @@
   </head>
   <body>
     <div id = "body">
-     
-	
-	
-	  <%@ include file= "menu.jsp" %>
-      
-      <div id="login_form">
-          <div id = "innerBodyLogin">
-              <div id = "title" >
-                    Autentificare
-              </div>
-              <br>
-             
-                  <form method = "post" action="LoginSession">
-                  ${mesaj} 
-                    <div class="form-group">
-				      <p>Nume</p>
-				      <input class="form-control" name="username" id="inputdefault" type="text">
-				    </div>
-				    
-                    <div class="form-group">
-				      <p>Parola</p>
-				      <input class="form-control" name="password" id="inputdefault" type="password">
-				    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                    
-                    
-                    
-                    </form>
-          
-          </div>
-    </div>
     
+	  <%@ include file= "menu.jsp" %>
+	  
+      <% String un = (String)request.getSession().getAttribute("username"); 
+        if(un!=null)
+        {
+        	%>
+        	
+        	<h2>Sunteti deja logat! Veti fi redirectat catre pagina principala</h2>
+        	<META http-equiv="refresh" content="3;URL=/">
+        	<%
+        }else{%>
+        
+        	<div id="login_form">
+            <div id = "innerBodyLogin">
+                <div id = "title" >
+                      Autentificare
+                </div>
+                <br>
+               
+                    <form method = "post" action="LoginSession">
+                    ${mesaj} 
+                      <div class="form-group">
+  				      <p>Nume</p>
+  				      <input class="form-control" name="username" id="inputdefault" type="text">
+  				    </div>
+  				    
+                      <div class="form-group">
+  				      <p>Parola</p>
+  				      <input class="form-control" name="password" id="inputdefault" type="password">
+  				    </div>
+                      <button type="submit" class="btn btn-primary">Login</button>
+                      </form>
+            </div>
+      </div>
+        	
+       <% }%>
+
     <footer>
     <div id = "innerBody">
     <p align="center"> Nu ești înregistrat? Înregistrarea se face de către <a href="#">administratorul</a> site-ului și este disponibilă doar pentru membrii LSAC.</p>

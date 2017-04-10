@@ -24,16 +24,20 @@ public class Logout extends HttpServlet
             throws ServletException, IOException 
     {
        HttpSession session = request.getSession(false);
-      if (session != null) 
-      {
+       
+      
+      if (session!=null && session.getAttribute("username")!=null) {
             session.removeAttribute("username");
             session.removeAttribute("password");
-
-            session.invalidate();
+           
+            request.setAttribute("mesaj", "V-ati deconectat cu succes!");
+    	  
+           request.getRequestDispatcher("login.jsp").forward(request, response);
+    	  session.invalidate();
       }
       else
       {
-    	  request.setAttribute("mesaj", "Ați fost delogat cu succes!");
+    	  request.setAttribute("mesaj", "Nu sunteți logat!");
     	  request.getRequestDispatcher("login.jsp").forward(request, response);
       }
     } 
