@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Liga Studenților Facultății de Automatică și Calculatoare din Iași </title>
+    <title> LSAC Iași </title>
     <meta charset="utf-8">
     <link href ="style/css/style.css" rel ="stylesheet">
     <link href ="style/css/styleFirst.css" rel="stylesheet">

@@ -1,4 +1,4 @@
-package servlet;
+package com.tip.servlet;
 
 import java.io.IOException;
 

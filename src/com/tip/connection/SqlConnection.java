@@ -1,14 +1,14 @@
-package connection;
+package com.tip.connection;
 
 import java.sql.*;
 
-public class sqlConnection {
+public class SqlConnection {
 	
 	private Connection con;
 	private Statement st;
 	private ResultSet rs;
 	
-		public sqlConnection(){
+		public SqlConnection(){
 			try{
 				Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/portal", "root", "");
@@ -38,6 +38,7 @@ public class sqlConnection {
 			return false;
 		}
 		
+		
 //		public static boolean close(Connection c){
 //			try{
 //				c.close();
@@ -47,9 +48,4 @@ public class sqlConnection {
 //			}
 //		}
 		
-		
-		public static void main(String[] args){
-			//sqlConnection conn = new sqlConnection();
-			//conn.getData();
-		}
 }

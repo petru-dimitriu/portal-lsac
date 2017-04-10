@@ -1,4 +1,4 @@
-package servlet;
+package com.tip.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,7 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import connection.*;
+
+import com.tip.connection.*;
 /**
  * Servlet implementation class LoginSession
  */
@@ -40,7 +41,7 @@ public class LoginSession extends HttpServlet {
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		if ((new sqlConnection()).getData(username, password)){
+		if ((new SqlConnection()).getData(username, password)){
 			HttpSession session = request.getSession();
 			session.setAttribute("username", username);
 			response.sendRedirect("index.jsp");
