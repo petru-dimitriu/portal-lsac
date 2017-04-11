@@ -19,26 +19,38 @@ public class SqlConnection {
 			try{
 				Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/portal", "root", "");
-				st = con.createStatement();
 			}catch(Exception ex){
 				throw new Error(ex);
 			}
 		}
 		
-		public boolean isUserPresentInDatabase(String uname, String pw){
+		public boolean checkLoginInfo(String username, String password){
 			try{
-				
 				String query = "select * from users";
 				rs = st.executeQuery(query);
-				//System.out.println("Interogare DB");
 				while(rs.next()){
-					String name = rs.getString("name");
-					String parola = rs.getString("password");
-					if(uname.equals(name) && pw.equals(parola))
+					String dbName = rs.getString("name");
+					String dbPassword = rs.getString("password");
+					if(username.equals(dbName) && password.equals(dbPassword))
 					return true;
 				}
 				
-				
+			}catch (Exception ex){
+				System.out.println(ex);
+			}
+			return false;
+		}
+		
+		public boolean isUserInDatabase(String username) {
+			try{
+				String query = "select * from users";
+				rs = st.executeQuery(query);
+				while(rs.next()) {
+					String dbName = rs.getString("name");
+					if(username.equals(dbName)) {
+						return true;
+					}
+				}
 			}catch (Exception ex){
 				System.out.println(ex);
 			}
