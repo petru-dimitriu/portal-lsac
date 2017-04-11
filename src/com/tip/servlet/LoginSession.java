@@ -44,7 +44,7 @@ public class LoginSession extends HttpServlet {
 		if ((new SqlConnection()).checkLoginInfo(username, password)){
 			HttpSession session = request.getSession();
 			session.setAttribute("username", username);
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("article.jsp");
 		}else{
 			request.setAttribute("mesaj", "Contul este gresit sau nu exista!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);

@@ -14,12 +14,26 @@
         <% String uname = (String)request.getSession().getAttribute("username"); 
         if(uname!=null)
         {%>
-          <li id="liArticles">/articole</li>
-          <li id="liVote">/vot</li>
-          <li id="liFiles">/fișiere</li>
+          <li id="liArticles"><a href="article.jsp">/articole</a></li>
+          <li id="liVote"><a href="#">/vot</a></li>
+          <li id="liFiles"><a href="#">/fisiere</a></li>
         </ul>
         
         <ul class = "userTools">
+        <li>
+        
+        <p id="demo"></p>
+          <script>
+            var myVar = setInterval(myTimer ,0);
+            function myTimer() {
+                var d = new Date();
+                document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+            }
+            </script>
+        
+        
+        
+        </li>
           <li>/${sessionScope.username}</li>
           <li><a href="Logout">/ieșire</a></li>
         </ul>
@@ -29,7 +43,21 @@
        <%}else{%>
     	   <li><a href="login.jsp">Autentificare</a></li>
            </ul>
+           <ul class = "userTools">
+        <li>
+        
+        <p id="demo"></p>
+          <script>
+            var myVar = setInterval(myTimer ,0);
+            function myTimer() {
+                var d = new Date();
+                document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+            }
+            </script>
+        
+        
+        
+        </li>
       <% }
        %>
-         
 </div>
