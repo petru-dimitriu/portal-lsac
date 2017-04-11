@@ -41,8 +41,13 @@ body {
     li {
       display: inline-block;
       padding: 3px 5px 3px 5px;
+      color: white;
+      &:hover { background-color: @lsacBlue; } 
     }
     #liArticles { background-color: @lsacBlue; }
+    #liVote { &:hover { background-color: #aaaa00; } }
+    #liFiles { &:hover { background-color: green; } }
+    a { text-decoration: none; color: white; }
   }
 }
 

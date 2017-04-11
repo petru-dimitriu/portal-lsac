@@ -19,6 +19,7 @@ public class SqlConnection {
 			try{
 				Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/portal", "root", "");
+				st = con.createStatement();
 			}catch(Exception ex){
 				throw new Error(ex);
 			}

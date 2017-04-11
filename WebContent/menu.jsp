@@ -15,8 +15,8 @@
         if(uname!=null)
         {%>
           <li id="liArticles">/articole</li>
-          <li>/vot</li>
-          <li>/fișiere</li>
+          <li id="liVote">/vot</li>
+          <li id="liFiles">/fișiere</li>
         </ul>
         
         <ul class = "userTools">
