@@ -70,6 +70,9 @@ body {
   font-size: 300%;
   line-height: 95%;
 }
+tr:hover {
+  background-color: #4f4ffa;
+}
 #body {
   background-color: #b2b2fd;
   min-height: 95vh;

@@ -2,6 +2,6 @@
     pageEncoding="UTF-8"%>
  <div id = "upperThird">
         <div id = "title" >
-          Informații personale
+          Utilizatorul ${sessionScope.username} 
         </div>
 </div>
