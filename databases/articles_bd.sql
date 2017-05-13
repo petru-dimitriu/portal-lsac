@@ -1,1 +1,8 @@
-create table ARTICLES (id_article number(7), article_name varchar2(20) NOT NULL, username varchar2(20), postDate date, constraint id_article_pk primary key(id_article));
+CREATE TABLE `articles` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `title` varchar(256) NOT NULL,
+ `username` varchar(32) NOT NULL,
+ `content` text NOT NULL,
+ `postDate` date NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
