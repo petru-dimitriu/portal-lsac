@@ -39,14 +39,14 @@ public class SessionUser {
 	{
 	}
 	
-	static SessionUser getInstance ()
+	public static SessionUser getInstance ()
 	{
 		if (instance == null)
 			instance = new SessionUser();
 		return instance;
 	}
 	
-	static void removeInstance ()
+	public static void removeInstance ()
 	{
 		instance = null;
 	}
