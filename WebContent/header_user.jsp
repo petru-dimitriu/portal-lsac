@@ -2,6 +2,6 @@
     pageEncoding="UTF-8"%>
  <div id = "upperThird">
         <div id = "title" >
-          Utilizatorul ${sessionScope.username} 
+          Utilizatorul <% out.print(user.getName());%> 
         </div>
 </div>
