@@ -40,7 +40,7 @@ public class LoginSession extends HttpServlet {
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		if ((new LoginConnection()).checkLoginInfo(username, password)){
+		if ((new SqlConnection()).checkLoginInfo(username, password)){
 			HttpSession session = request.getSession();
 			SessionUser sessionUser = SessionUser.getInstance();
 			session.setAttribute("username", username);
