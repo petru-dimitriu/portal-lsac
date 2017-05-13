@@ -36,12 +36,10 @@ public class LoginSession extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		if ((new SqlConnection()).checkLoginInfo(username, password)){
+		if ((new LoginConnection()).checkLoginInfo(username, password)){
 			HttpSession session = request.getSession();
 			session.setAttribute("username", username);
 			response.sendRedirect("article.jsp");
