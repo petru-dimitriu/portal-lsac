@@ -44,8 +44,8 @@
 			<br>
 		<%	out.print(articles.getString("username")); %>
 			<br>
-		<%	out.print(articles.getString("content")); %>
-			<br>
+		
+			
 		<% } %>
 	</div>
 	

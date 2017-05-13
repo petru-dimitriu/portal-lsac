@@ -15,7 +15,7 @@
 	
       <%@ include file= "header_article.jsp" %>
 
-      <%@ include file= "main_article.jsp" %>
+      <%@ include file= "articles.jsp" %>
       
       <%@ include file= "footer.jsp" %>
       
