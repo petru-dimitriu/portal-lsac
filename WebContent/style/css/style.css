@@ -44,15 +44,15 @@ body {
 #upperNavBar ul.userTools li:hover {
   background-color: #0505ab;
 }
-#upperNavBar ul #liArticles,
-#upperNavBar p #liArticles,
-#upperNavBar ul.userTools #liArticles {
+#upperNavBar ul #liArticles:hover,
+#upperNavBar p #liArticles:hover,
+#upperNavBar ul.userTools #liArticles:hover {
   background-color: #0505ab;
 }
 #upperNavBar ul #liVote:hover,
 #upperNavBar p #liVote:hover,
 #upperNavBar ul.userTools #liVote:hover {
-  background-color: #aaaa00;
+  background-color: #e6d600;
 }
 #upperNavBar ul #liFiles:hover,
 #upperNavBar p #liFiles:hover,
