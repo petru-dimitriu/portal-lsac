@@ -34,7 +34,7 @@
         
         
         </li>
-          <li>/${sessionScope.username}</li>
+          <li><a href="user.jsp">/${sessionScope.username}</a></li>
           <li><a href="Logout">/ieșire</a></li>
         </ul>
        <%}
