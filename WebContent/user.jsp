@@ -21,7 +21,11 @@ System.out.println(user.getMail());
 	
 		<%@ include file= "menu.jsp" %>
 	
-    	<%@ include file= "header_user.jsp" %>
+    	 <div id = "upperThird">
+        <div id = "title" >
+          Utilizatorul <% out.print(user.getName());%> 
+        </div>
+		</div>
  		<div id = "innerBody">
  		   <p align="center">
  		   		<table>

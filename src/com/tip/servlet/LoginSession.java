@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.tip.connection.*;
+import com.tip.data.SessionUser;
 /**
  * Servlet implementation class LoginSession
  */
@@ -42,6 +43,8 @@ public class LoginSession extends HttpServlet {
 		if ((new SqlConnection()).checkLoginInfo(username, password)){
 			HttpSession session = request.getSession();
 			session.setAttribute("username", username);
+			session.setAttribute("id", SessionUser.getInstance().getUser().getId());
+			System.out.println("id " + SessionUser.getInstance().getUser().getId());
 			response.sendRedirect("article.jsp");
 		}else{
 			request.setAttribute("mesaj", "Contul este gresit sau nu exista!");

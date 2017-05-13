@@ -6,6 +6,16 @@ public class User {
 	private static SessionUser instance;
 	private String name;
 	private String mail;
+	private String id;
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	private Date date;
 	
 	public String getName() {

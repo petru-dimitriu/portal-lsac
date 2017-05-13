@@ -35,15 +35,18 @@ public class SqlConnection {
 					String dbName = rs.getString("name");
 					String dbPassword = rs.getString("password");
 					String dbEmail = rs.getString("email");
+					String dbId = rs.getString("id_user");
 					Date dbEntryDate = rs.getDate("entryDate");
 					if(username.equals(dbName) && password.equals(dbPassword))
 					{
 						User user = new User();
 						SessionUser sessionUser = SessionUser.getInstance();
+						user.setId(dbId);
 						user.setName(dbName);
 						user.setMail(dbEmail);
 						user.setDate(dbEntryDate);
 						sessionUser.setUser(user);
+						
 						return true;
 					}
 				}
@@ -98,6 +101,7 @@ public class SqlConnection {
 				result.setDate(rs.getDate("entryDate"));
 				result.setMail(rs.getString("email"));
 				result.setName(rs.getString("name"));
+				result.setId(new Integer(id).toString());
 				return result;
 			}
 			return null;
