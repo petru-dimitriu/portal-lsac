@@ -1,6 +1,6 @@
 ﻿<div id = "upperNavBar">
         <p>
-          <a href="/">LSAC Iași</a>
+          <a href="index.jsp">LSAC Iași</a>
         </p>
         <ul>
         <%
@@ -15,8 +15,8 @@
         if(uname!=null)
         {%>
           <li id="liArticles"><a href="article.jsp">/articole</a></li>
-          <li id="liVote"><a href="#">/vot</a></li>
-          <li id="liFiles"><a href="#">/fisiere</a></li>
+          <li id="liVote"><a href="vote.jsp">/vot</a></li>
+          <li id="liFiles"><a href="files.jsp">/fisiere</a></li>
         </ul>
         
         <ul class = "userTools">
@@ -42,8 +42,8 @@
        
        <%}else{%>
     	   <li><a href="login.jsp">Autentificare</a></li>
-           </ul>
-           <ul class = "userTools">
+           
+           <ul class = "userTools"> </ul>
         <li>
         
         <p id="demo"></p>

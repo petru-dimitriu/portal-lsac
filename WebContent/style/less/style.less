@@ -2,6 +2,8 @@
 
 // Colour variables
 @lsacBlue : #0505AB;
+@lsacYellow: #e6d600;
+@lsacGreen: green;
 
 @font-face {
     font-family: PTSans;
@@ -44,9 +46,9 @@ body {
       color: white;
       &:hover { background-color: @lsacBlue; } 
     }
-    #liArticles { background-color: @lsacBlue; }
-    #liVote { &:hover { background-color: #aaaa00; } }
-    #liFiles { &:hover { background-color: green; } }
+    #liArticles { &:hover { background-color: @lsacBlue; } }
+    #liVote { &:hover { background-color: @lsacYellow; } }
+    #liFiles { &:hover { background-color: @lsacGreen; } }
     a { text-decoration: none; color: white; }
   }
 }
@@ -103,7 +105,7 @@ body {
 
 #body {
   .body (@lsacBlue);
-}
+} 
 
 ul.userTools {
   float: right;

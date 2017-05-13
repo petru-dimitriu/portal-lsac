@@ -1,6 +1,6 @@
 <br>
 <footer>
 	<div id = "innerBody">
-	<p align="center">Copyright@2016</p>
+	<p align="center">Copyright@2017</p>
 	</div>
 </footer>

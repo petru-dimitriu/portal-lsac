@@ -9,13 +9,13 @@
     <link href ="style/css/style.css" rel ="stylesheet">
   </head>
   <body>
-    <div id = "body">
+    <div id = "body_vote">
 	
-	<%@ include file= "menu.jsp" %>
+		<%@ include file= "menu.jsp" %>
 	
-      <%@ include file= "header_article.jsp" %>
+      <%@ include file= "header_vote.jsp" %>
 
-      <%@ include file= "main_article.jsp" %>
+      <%@ include file= "main_vote.jsp" %>
       
       <%@ include file= "footer.jsp" %>
       
