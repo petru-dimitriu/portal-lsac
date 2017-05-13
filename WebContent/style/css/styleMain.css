@@ -111,12 +111,32 @@ ul.userTools {
 ul.userTools li {
   padding: 3px 5px 3px 5px;
 }
-.text1 {
+#sectiune {
   background-color: #b2b2fd;
-  width: 300px;
-  border: 25px solid #b2b2fd;
-  padding: 25px;
-  margin: 25px;
+  width: 200px;
+  border: 15px solid #b2b2fd;
+  padding: 15px;
+  margin: 15px;
+}
+.button {
+  background-color: #0505ab;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 80px;
+  cursor: pointer;
+}
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid #0505ab;
+}
+.button:hover {
+  background-color: #0505ab;
+  color: white;
 }
 tr:hover {
   background-color: #9999fc;

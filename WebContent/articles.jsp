@@ -1,7 +1,7 @@
 <%@page import="com.tip.connection.*, java.sql.*" %>
-
- <link rel="stylesheet" type="text/css" href="style/css/style_headers.css"> 
- 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <div id = "innerBody">
 
 	<%!
@@ -33,18 +33,18 @@
 	}
 	%>
 	
-	<div class=sectionare>
+	<div id="sectiune">
 		<%
 		Article article = new Article();
 		ResultSet articles = article.getArticles();
 		while(articles.next()){
 			out.print(articles.getString("title")); %> 
 			<br> 
-		<%	out.print(articles.getDate("postDate")); %>
+		<%	out.print("Data postării:  " + articles.getDate("postDate")); %>
 			<br>
-		<%	out.print(articles.getString("username")); %>
-			<br>
-		
+		<%	out.print("Postat de:  " + articles.getString("username")); %>
+			<br> <br> <br>
+			<a href="main_article.jsp" class="button"> Read more </a>
 			
 		<% } %>
 	</div>
