@@ -38,10 +38,12 @@ public class SqlConnection {
 					Date dbEntryDate = rs.getDate("entryDate");
 					if(username.equals(dbName) && password.equals(dbPassword))
 					{
+						User user = new User();
 						SessionUser sessionUser = SessionUser.getInstance();
-						sessionUser.setName(dbName);
-						sessionUser.setMail(dbEmail);
-						sessionUser.setDate(dbEntryDate);
+						user.setName(dbName);
+						user.setMail(dbEmail);
+						user.setDate(dbEntryDate);
+						sessionUser.setUser(user);
 						return true;
 					}
 				}
@@ -76,7 +78,7 @@ public class SqlConnection {
 				while(rs.next()){
 					User user = new User();
 					user.setName(rs.getString("name"));
-					user.setEmail(rs.getString("email"));
+					user.setMail(rs.getString("email"));
 					result.add(user);
 				}
 			} catch (Exception ex) {
@@ -85,6 +87,34 @@ public class SqlConnection {
 			}
 			return result;
 		}
+		
+		public User getUserInfo(int id)
+		{
+			try {
+			rs = st.executeQuery("select * from users where id_user = " + id);
+			while (rs.next())
+			{
+				User result = new User();
+				result.setDate(rs.getDate("entryDate"));
+				result.setMail(rs.getString("email"));
+				result.setName(rs.getString("name"));
+				return result;
+			}
+			return null;
+			} catch (Exception ex)
+			{
+				System.out.println(ex);
+				return null;
+			}
+		}
+		//		public static boolean close(Connection c){
+//			try{
+//				c.close();
+//				return true;
+//			}catch(Exception e){
+//				return false;
+//			}
+//		}
 		
 		
 }
