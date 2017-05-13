@@ -6,12 +6,12 @@
   <head>
     <title> Liga Studenților Facultății de Automatică și Calculatoare din Iași </title>
     <meta charset="utf-8">
-    <link href ="style/css/style.css" rel ="stylesheet">
+    <link href ="style/css/styleVote.css" rel ="stylesheet">
   </head>
   <body>
-    <div id = "body_vote">
+    <div id = "body">
 	
-		<%@ include file= "menu.jsp" %>
+	  <%@ include file= "menu.jsp" %>
 	
       <%@ include file= "header_vote.jsp" %>
 

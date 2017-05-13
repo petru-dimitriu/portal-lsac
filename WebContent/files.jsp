@@ -6,10 +6,10 @@
   <head>
     <title> Liga Studenților Facultății de Automatică și Calculatoare din Iași </title>
     <meta charset="utf-8">
-    <link href ="style/css/style.css" rel ="stylesheet">
+    <link href ="style/css/styleFiles.css" rel ="stylesheet">
   </head>
   <body>
-    <div id = "body_files">
+    <div id = "body">
 	
 		<%@ include file= "menu.jsp" %>
 	
