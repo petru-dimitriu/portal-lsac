@@ -7,8 +7,6 @@
 
 	<div class="text1">
 		
-		
-		
 	</div>
       
 </div>
