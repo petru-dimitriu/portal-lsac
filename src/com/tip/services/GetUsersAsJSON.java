@@ -6,14 +6,14 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.google.gson.Gson;
-import com.tip.connection.SqlConnection;
+import com.tip.connection.LoginConnection;
 
 @Path("GetUsersAsJSON")
 public class GetUsersAsJSON {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getJson() {
-		return new Gson().toJson((new SqlConnection().getUserList())); 
+		return new Gson().toJson((new LoginConnection().getUserList())); 
 	}
 	
 	@GET

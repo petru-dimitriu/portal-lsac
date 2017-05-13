@@ -9,13 +9,13 @@ import java.util.List;
 
 import com.tip.data.User;
 
-public class SqlConnection {
+public class LoginConnection {
 	
 	private Connection con;
 	private Statement st;
 	private ResultSet rs;
 	
-		public SqlConnection(){
+		public LoginConnection(){
 			try{
 				Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/portal", "root", "");
