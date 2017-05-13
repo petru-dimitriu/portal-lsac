@@ -111,6 +111,13 @@ ul.userTools {
 ul.userTools li {
   padding: 3px 5px 3px 5px;
 }
+.text1 {
+  background-color: #b2b2fd;
+  width: 300px;
+  border: 25px solid #b2b2fd;
+  padding: 25px;
+  margin: 25px;
+}
 tr:hover {
   background-color: #9999fc;
 }
