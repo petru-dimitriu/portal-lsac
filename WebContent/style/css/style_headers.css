@@ -1,3 +1,11 @@
+/*ARTICLE*/
+.text1 {
+    background-color: #b2b2fd;
+    width: 300px;
+    border: 25px solid #b2b2fd;
+    padding: 25px;
+    margin: 25px;
+}
 
 /*VOTE*/
 #body_vote {
