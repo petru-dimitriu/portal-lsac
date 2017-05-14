@@ -14,7 +14,7 @@
         <% String uname = (String)request.getSession().getAttribute("username"); 
         if(uname!=null)
         {%>
-          <li id="liArticles"><a href="article.jsp">/articole</a></li>
+          <li id="liArticles"><a href="articles.jsp">/articole</a></li>
           <li id="liVote"><a href="vote.jsp">/vot</a></li>
           <li id="liFiles"><a href="files.jsp">/fisiere</a></li>
         </ul>

@@ -45,7 +45,7 @@ public class LoginSession extends HttpServlet {
 			session.setAttribute("username", username);
 			session.setAttribute("id", SessionUser.getInstance().getUser().getId());
 			System.out.println("id " + SessionUser.getInstance().getUser().getId());
-			response.sendRedirect("article.jsp");
+			response.sendRedirect("articles.jsp");
 		}else{
 			request.setAttribute("mesaj", "Contul este gresit sau nu exista!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
