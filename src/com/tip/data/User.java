@@ -3,7 +3,6 @@ package com.tip.data;
 import java.util.Date;
 
 public class User {
-	private static SessionUser instance;
 	private String name;
 	private String mail;
 	private String id;

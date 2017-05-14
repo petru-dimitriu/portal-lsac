@@ -25,30 +25,32 @@ User user = new SqlConnection().getUserInfo(id);
         </div>
 		</div>
  		<div id = "innerBody">
- 		   <p align="center">
+ 		<h1> Informatii </h1>
  		   		<table>
  		   		<tr> <td> Nume: </td> <td> <% out.print(user.getName()); %> </td> </tr>
  		   		<tr> <td> Adresa de mail: </td> <td> <%  out.print(user.getMail()); %> </td> </tr>
  		   		<tr> <td> Data inscrierii: </td> <td> <%  out.print(user.getDate()); %> </td> </tr>
  		   		</table>
-    			 
-    		 </p>
     		 <br><br>
-    		 <p align="center">
-    		 	<table>
-    		 		<tr> Articolele postate de <% out.print(user.getName()); %>: </tr>
+    		 <h1> Articolele postate de <% out.print(user.getName()); %> </h1>
+    		 		
     		 			<ul>
     		 				<%
     		 				ResultSet articles = new SqlConnection().getArticlesByAuthor(id);
+    		 				boolean hasAnyArticles = false;
     		 				while(articles.next())
     		 				{
+    		 					hasAnyArticles = true;
     		 					%> <li> <%out.print(articles.getString("title"));%> </li>
-    		 					
     		 					<%
     		 				}
+    		 				if (!hasAnyArticles) {
     		 				%>
+    		 				<p> Niciun articol pana acum! </p>
+    		 				<% } %>
+    		 				
+    		 				
     		 			</ul>
-    		 	</table>
     		 </p>
     		 
     		 
