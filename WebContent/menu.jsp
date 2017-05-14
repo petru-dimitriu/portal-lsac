@@ -1,6 +1,6 @@
 ﻿<div id = "upperNavBar">
         <p>
-          <a href="index.jsp">LSAC Iași</a>
+          <a href="index.jsp">LSAC Iasi</a>
         </p>
         <ul>
         <%

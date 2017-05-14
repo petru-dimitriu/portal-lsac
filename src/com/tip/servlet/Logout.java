@@ -37,7 +37,7 @@ public class Logout extends HttpServlet
       }
       else
       {
-    	  request.setAttribute("mesaj", "Nu sunteți logat!");
+    	  request.setAttribute("mesaj", "Nu sunteti logat!");
     	  request.getRequestDispatcher("login.jsp").forward(request, response);
       }
     } 

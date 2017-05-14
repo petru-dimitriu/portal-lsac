@@ -1,1 +1,8 @@
-create table USERS (id_user number(7),name varchar2(20) NOT NULL, password varchar2(20) NOT NULL, email varchar2(30) NOT NULL, entryDate date, constraint id_user_pk primary key(id_user));
+CREATE TABLE `users` (
+ `id_user` int(11) NOT NULL AUTO_INCREMENT,
+ `name` varchar(64) NOT NULL,
+ `password` varchar(64) DEFAULT NULL,
+ `email` varchar(64) NOT NULL,
+ `entryDate` date DEFAULT NULL,
+ PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1

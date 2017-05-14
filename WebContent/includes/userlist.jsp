@@ -7,8 +7,7 @@
 		private Connection con;
 		private Statement st;
 		private ResultSet rs;
-		PreparedStatement selectUsers;
-		
+		PreparedStatement selectUsers; 
 			public User(){
 				try{
 					Class.forName("com.mysql.jdbc.Driver");
@@ -27,17 +26,42 @@
 				}
 				return rs;
 			}
+			
+		public void insertUser(String name, String email) {
+			try{
+			Statement st = con.createStatement();
+			System.out.println("!");
+			String sql = "INSERT INTO users"
+						+ "(name, email)"
+						+ "values (\""+name+"\", \""+email+"\")";
+			int result = st.executeUpdate(sql);
+			System.out.println(result);
+			}catch(Exception e){
+				System.out.println("??");
+				e.printStackTrace();
+			}
+			
+		}
 	}
-	%>
+
+%>
+	
 	<%
+	new User().insertUser("nutzu", "email@a");
 	User user = new User();
 	ResultSet users = user.getUsers();
 	while(users.next()){%>
-		<div>
+		<div id="userBox">
 		<a href="../user.jsp?id=<%= users.getString("id_user")  %>"><% out.print(users.getString("name")); %></a>
+		
+		
 		</div>
 		<%
 	}
 	%>
+	
+	
+	
+	
 </div>
 
