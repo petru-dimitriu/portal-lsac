@@ -1,8 +1,8 @@
-<%@page import="com.tip.connection.*, java.sql.*" %>
+<%@page import="com.tip.connection.*, java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
-<div id = "innerBody">
+<div id="innerBody">
 
 	<%!
 	public class Article {
@@ -32,23 +32,26 @@
 			}
 	}
 	%>
-	
-		<%
+
+	<%
 		Article article = new Article();
 		ResultSet articles = article.getArticles();%>
-		
-		<%while(articles.next()){%>
-		<div id="sectiune">
-		
-		 <b> <%out.print(articles.getString("title")); %> </b>
-			<br> 
+
+	<%while(articles.next()){%>
+	
+	<div class="sectiune">
+
+		<b> <%out.print(articles.getString("title")); %>
+		</b> <br>
 		<%	out.print("Data postării:  " + articles.getDate("postDate")); %>
-			<br>
+		<br>
 		<%	out.print("Postat de:  " + articles.getString("username")); %>
-			<br> <br> <br>
-			<a href="article.jsp?id=<%= articles.getString("id") %>" class="button"> Read more </a>
-		</div> 
-		
-		<% } %>
+		<br> <br> <br> <a
+			href="article.jsp?id=<%= articles.getString("id") %>" class="button">
+			Read more </a>
+	</div>
+	
+
+	<% } %>
 </div>
 
