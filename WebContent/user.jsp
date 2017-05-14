@@ -1,6 +1,6 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="com.tip.connection.*"%>
-<%@page import="com.tip.data.*"%>
+<%@page import="com.tip.connection.SqlConnection"%>
+<%@page import="com.tip.data.*, java.sql.*"%>
 <% 
 int id = Integer.parseInt(request.getParameter("id"));
 
@@ -32,6 +32,23 @@ User user = new SqlConnection().getUserInfo(id);
  		   		<tr> <td> Data inscrierii: </td> <td> <%  out.print(user.getDate()); %> </td> </tr>
  		   		</table>
     			 
+    		 </p>
+    		 <br><br>
+    		 <p align="center">
+    		 	<table>
+    		 		<tr> Articolele postate de <% out.print(user.getName()); %>: </tr>
+    		 			<ul>
+    		 				<%
+    		 				ResultSet articles = new SqlConnection().getArticlesByAuthor(id);
+    		 				while(articles.next())
+    		 				{
+    		 					out.print(articles.getString("title"));%>
+    		 					<br>
+    		 					<%
+    		 				}
+    		 				%>
+    		 			</ul>
+    		 	</table>
     		 </p>
     	</div>
         

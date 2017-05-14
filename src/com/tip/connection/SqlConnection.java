@@ -145,6 +145,15 @@ public class SqlConnection {
 			}
 			return rs;
 		}
+		public ResultSet getArticlesByAuthor(int id) {
+			try {
+				selectArticles = con.prepareStatement("SELECT * FROM articles a, users u WHERE a.username=u.name AND u.id_user = " + id );
+				rs = selectArticles.executeQuery();
+			} catch (Exception ex) {
+				System.out.println(ex);
+			}
+			return rs;
+		}
 		public ResultSet getArticles(){
 			try{
 				selectArticles = con.prepareStatement("SELECT * FROM articles");

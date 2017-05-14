@@ -1,4 +1,4 @@
-<%@page import="com.tip.connection.*, java.sql.*" %>
+<%@page import="com.tip.connection.SqlConnection, java.sql.*" %>
 <br>
 <div id = "innerBody">
 

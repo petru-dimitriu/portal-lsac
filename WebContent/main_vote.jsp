@@ -1,5 +1,5 @@
  <link rel="stylesheet" type="text/css" href="style/css/style_headers.css"> 
- <%@page import="com.tip.connection.*, java.sql.*" %>
+ <%@page import="com.tip.connection.SqlConnection, java.sql.*" %>
  
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
