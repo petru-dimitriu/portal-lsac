@@ -45,27 +45,39 @@
 				}
 				return rs;
 			}
-	}
-	%>
-	<%
+	}%>
+	
+	<% 
 	Sondaje sondaj = new Sondaje();
 	ResultSet sondaje = sondaj.getSondaje();
 	while(sondaje.next())
 	{
 		out.print(sondaje.getString("titlu"));
 		String x=sondaje.getString("optiuni");
+		Date stopVot=sondaje.getDate("stopSondaj");
 		String[] optiuni=x.split(",");
 
 		for(int i=0;i<optiuni.length;i++)
 		{ 
 		%>
 			<br>
-			<input type="radio" name="ans" value="${optiuni[i]}"><%out.print(optiuni[i]);%>
-		<% 
+			<input type="radio" name="ans" value="${optiuni[i]}"><%out.print(optiuni[i]);
+		
 		} %>
 		<br><br>
 		<input type="submit" value="Votează!">
+		<script src="js/script.js"></script>
+		
+		<div>
+		<br>
+		<script>var countDownDate = new Date("May 17,2017");</script>
+		
+			Timpul ramas de votare : <span id="stop"> </span> 
+		</div>
+		<br><br>
+	
 	<%}%>
+	
      
      
 </div>
