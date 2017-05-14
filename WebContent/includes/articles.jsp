@@ -4,9 +4,6 @@
     
 <div id = "innerBody">
 
-	
-	
-	
 		<%
 		ResultSet articles = new SqlConnection().getArticles();%>
 		<ul>
