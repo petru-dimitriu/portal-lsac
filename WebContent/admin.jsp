@@ -13,7 +13,7 @@
 	margin:0 auto;
 	}
 	</style>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
     <div id = "body">
@@ -30,16 +30,34 @@
 <div id = "innerBody">
 
 	<div id="admin_buttons">
-	<button>Administrare utilizatori</button>
-	<button>Adaugare articole</button>
-	<button>Administrare galerie</button>
-	<button>Administrare poll</button>
+	<input type="button" id="b1" value="Administrare utilizatori">
+	<input type="button" id="b2" value="Lista utilizatori">
+	<input type="button" id="b3" value="Administrare galerie">
+	<input type="button" id="b4" value="Administrare poll">
 	</div>
 </div>
 <br>
 
-<%@ include file= "includes/adduser.jsp" %>
-<%@ include file= "includes/userlist.jsp" %>
+<div id="target"></div>
+
+
+<script type=text/javascript>
+$(document).ready(function(){
+	$("#b1").click(function(){
+		$("#target").load("includes/adduser.jsp");
+	});
+});
+$(document).ready(function(){
+	$("#b2").click(function(){
+		$("#target").load("includes/userlist.jsp");
+	});
+});
+
+
+
+
+</script>
+
 	
 	
 	
