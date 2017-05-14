@@ -17,38 +17,8 @@
 
 		<div id="upperThird">
 
-
-
-			<%!public class Article {
-
-		private Connection con;
-		private Statement st;
-		private ResultSet rs;
-		PreparedStatement selectArticles;
-
-		public Article(int id) {
-			try {
-				Class.forName("com.mysql.jdbc.Driver");
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/portal", "root", "");
-				selectArticles = con.prepareStatement("SELECT * FROM articles WHERE id = "+ id);
-			} catch (Exception ex) {
-				throw new Error(ex);
-			}
-		}
-
-		public ResultSet getArticles() {
-			try {
-				rs = selectArticles.executeQuery();
-			} catch (Exception ex) {
-				System.out.println(ex);
-			}
-			return rs;
-		}
-	}%>
-	
 			<%
-					Article article = new Article(id);
-					ResultSet articles = article.getArticles();
+					ResultSet articles = new SqlConnection().getArticles(id);
 					while (articles.next()) {%>
 			<div id="title">
 				<%
