@@ -4,6 +4,8 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<script src="js/script.js"></script>
+
 <div id = "innerBody">
 
 	Vă rugăm să acordați o notă noului site LSAC!
@@ -47,9 +49,13 @@
 			}
 	}%>
 	
+	<script> countDownDate = []; // array
+	</script>
+	
 	<% 
 	Sondaje sondaj = new Sondaje();
 	ResultSet sondaje = sondaj.getSondaje();
+	int indexSondaj = 0;
 	while(sondaje.next())
 	{
 		out.print(sondaje.getString("titlu"));
@@ -61,23 +67,31 @@
 		{ 
 		%>
 			<br>
-			<input type="radio" name="ans" value="${optiuni[i]}"><%out.print(optiuni[i]);
+			<input type="radio" name="ans" value="${optiuni[i]}"><%out.print(optiuni[i]); %>
+		<%	
+		}
+		%>
 		
-		} %>
+		<script>countDownDate[<%=indexSondaj%>] = new Date(<% out.print(stopVot.getTime());%>);</script>
 		<br><br>
 		<input type="submit" value="Votează!">
-		<script src="js/script.js"></script>
 		
 		<div>
 		<br>
-		<script>var countDownDate = new Date("May 17,2017");</script>
-		
-			Timpul ramas de votare : <span id="stop"> </span> 
+		Timpul ramas de votare : <span id="stop<%=indexSondaj%>"> </span>
 		</div>
 		<br><br>
+		
+	<%
+	indexSondaj++;
+	}
+	%>
 	
-	<%}%>
+	<script>
+	for (var i = 0; i<countDownDate.length; i ++)
+	{
+		countTimeFor("stop"+i,countDownDate[i]);
+	}
+	</script>
 	
-     
-     
 </div>
