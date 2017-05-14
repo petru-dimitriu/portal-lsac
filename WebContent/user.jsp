@@ -42,14 +42,16 @@ User user = new SqlConnection().getUserInfo(id);
     		 				ResultSet articles = new SqlConnection().getArticlesByAuthor(id);
     		 				while(articles.next())
     		 				{
-    		 					out.print(articles.getString("title"));%>
-    		 					<br>
+    		 					%> <li> <%out.print(articles.getString("title"));%> </li>
+    		 					
     		 					<%
     		 				}
     		 				%>
     		 			</ul>
     		 	</table>
     		 </p>
+    		 
+    		 
     	</div>
         
       
