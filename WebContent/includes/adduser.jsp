@@ -1,15 +1,18 @@
 <%@page import="com.tip.connection.*, java.sql.*" %>
 <div id = "innerBody">
-	
-		<form method="post">
-		Username: <input type="text" name="username"><br>
-		
-		
-		
-		Nume:     <input type="text" name="nume"><br>
-		Prenume:  <input type="text" name="prenume"><br>
-		Email:    <input type="email" name="email"><br>
-		Data inscriere: <input type="date" name="joindate"><br>
-		<input type="submit">
-		</form>	
+	<h1>Adaugarea unui utilizator nou</h1>
+		<form method = "post" action="AddUser">
+                    
+                      <div style="width: 60%; margin: 0 auto;">
+                      
+  				      <p>Nume</p>
+  				      <input name="username" type="text" required>
+  				      <input name="password" type="hidden">
+  				      <p>Email</p>
+  				      <input name="email" type="email" required>
+  				      <br>
+  				      <br>
+                      <button type="submit">Submit</button>
+                      </div>
+                      </form>
 </div>

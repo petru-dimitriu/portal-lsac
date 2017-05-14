@@ -115,12 +115,12 @@ public class SqlConnection {
 				return null;
 			}
 		}
-		public void insertUser(String name, String email) {
+		public void insertUser(String name, String password, String email) {
 			try{
 			Statement st = con.createStatement();
 			String sql = "INSERT INTO users"
-						+ "(name, email)"
-						+ "values (\""+name+"\", \""+email+"\")";
+						+ "(name, password, email)"
+						+ "values (\""+name+"\", \""+password+"\", \""+email+"\")";
 			st.executeUpdate(sql);
 			}catch(Exception e){
 				e.printStackTrace();

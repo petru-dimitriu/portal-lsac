@@ -14,7 +14,7 @@
 	}
 	#userBox{
 	width: 800px;
-	height:50px;
+	height:40px;
     padding: 5px;
     margin-bottom:4px;
     background-color: #f5f5f5;
@@ -28,6 +28,39 @@
     width: 60%;
     min-height:100px;
 	}
+	.edit-form{
+    position: absolute;
+    top: 0px;
+    right: 60px;
+}
+.edit-form button{
+    width: 40px;
+    height: 30px;
+    color: white;
+    background-color: green;
+    opacity: 0.6;
+}
+.edit-form button:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.delete-form{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.delete-form button{
+    width: 50px;
+    height: 30px;
+    color: white;
+    background-color: red;
+    opacity: 0.6;
+}
+.delete-form button:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+	
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
@@ -42,9 +75,8 @@
 
 	<div id="admin_buttons">
 	<input type="button" id="b1" value="Administrare utilizatori">
-	<input type="button" id="b2" value="Lista utilizatori">
-	<input type="button" id="b3" value="Administrare galerie">
-	<input type="button" id="b4" value="Administrare poll">
+	<input type="button" id="b2" value="Administrare galerie">
+	<input type="button" id="b3" value="Administrare poll">
 	</div>
 </div>
 <br>
@@ -55,11 +87,6 @@
 <script type=text/javascript>
 $(document).ready(function(){
 	$("#b1").click(function(){
-		$("#target").load("includes/adduser.jsp");
-	});
-});
-$(document).ready(function(){
-	$("#b2").click(function(){
 		$("#target").load("includes/userlist.jsp");
 	});
 });

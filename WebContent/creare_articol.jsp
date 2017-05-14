@@ -7,7 +7,9 @@
     <title> Liga Studenților Facultății de Automatică și Calculatoare din Iași </title>
     <meta charset="utf-8">
     <link href ="style/css/style.css" rel ="stylesheet">
-    
+    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+						
   </head>
  <body>
     <div id = "body">
