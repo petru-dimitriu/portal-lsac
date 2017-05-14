@@ -6,10 +6,8 @@
 
 		<%
 		ResultSet articles = new SqlConnection().getArticles();%>
-		<ul>
 		<%while(articles.next()){%>
 		<div id="sectiune">
-		<li>
 			<%out.print(articles.getString("title")); %> 
 			<br> 
 		<%	out.print("Data postării:  " + articles.getDate("postDate")); %>
@@ -17,9 +15,8 @@
 		<%	out.print("Postat de:  " + articles.getString("username")); %>
 			<br> <br> <br>
 			<a href="article.jsp?id=<%= articles.getString("id") %>" class="button"> Read more </a>
-			</li></div>
+			</div>
 		<% } %>
-		</ul>
 	
 	
       
