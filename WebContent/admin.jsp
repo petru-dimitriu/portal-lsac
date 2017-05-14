@@ -12,6 +12,22 @@
 	#admin_buttons{ 
 	margin:0 auto;
 	}
+	#userBox{
+	width: 800px;
+	height:50px;
+    padding: 5px;
+    margin-bottom:4px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin:10px auto;
+    overflow:auto;
+    width: 60%;
+    min-height:100px;
+	}
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
@@ -21,11 +37,6 @@
 	<%@ include file= "menu.jsp" %>
 	
       <%@ include file= "header_article.jsp" %>
-
-
-
-
-
 
 <div id = "innerBody">
 
@@ -52,30 +63,9 @@ $(document).ready(function(){
 		$("#target").load("includes/userlist.jsp");
 	});
 });
-
-
-
-
 </script>
-
-	
-	
-	
-	
-
-
-	
-      
-</div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
+  
+</div>   
       <%@ include file= "footer.jsp" %>
       
       

@@ -1,33 +1,49 @@
-<%@page import="com.tip.connection.*, java.sql.*" %>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-  <head>
-    <title> Liga Studenților Facultății de Automatică și Calculatoare din Iași </title>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
     <link href ="style/css/style.css" rel ="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <div id = "body">
+    <link href ="style/css/styleFirst.css" rel="stylesheet">
+    <style>
+footer{
+position: fixed;
+bottom: 0;
+    left: 0;
+    right:0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+#authForm{
+position: absolute;
+top: 25%;
+left:40%;
+background-color:green;
+padding: 50px;}
+
+form input{
+    border-radius: 5px;
+    border-color: transparent;
+}
+
+</style>
     
-	  <%@ include file= "menu.jsp" %>
-	  
-      <% String un = (String)request.getSession().getAttribute("username"); 
+</head>
+<body>
+<div id = "body">
+    <%@ include file= "menu.jsp" %>
+	
+	<% String un = (String)request.getSession().getAttribute("username"); 
         if(un!=null)
-        {
-        	%>
-        	
-        	<h2>Sunteti deja logat! Veti fi redirectat catre pagina principala</h2>
+        { %> <h2>Sunteti deja logat! Veti fi redirectat catre pagina principala</h2>
         	<META http-equiv="refresh" content="3;URL=/">
         	<%
         }else{%>
-        
-        	<div id="login_form">
-            <div id = "innerBodyLogin">
+	
+
+	<div id = "innerBodyLogin">
+		<div id="authForm">
                 <div id = "title" >
                       Autentificare
                 </div>
@@ -35,6 +51,7 @@
                
                     <form method = "post" action="LoginSession">
                     ${mesaj} 
+                      <div style="width: 60%; margin: 0 auto;">
                       <div class="form-group">
   				      <p>Nume</p>
   				      <input class="form-control" name="username" id="inputdefault" type="text">
@@ -44,22 +61,21 @@
   				      <p>Parola</p>
   				      <input class="form-control" name="password" id="inputdefault" type="password">
   				    </div>
-                      <button type="submit" class="btn btn-primary">Login</button>
+                      <button type="submit" class="btn btn-primary style="margin: 0 auto;"">Login</button>
+                      </div>
                       </form>
+                      </div>
             </div>
-      </div>
-        	
-       <% }%>
+            
+			
+	<% }%>
 
-    <footer>
+
+<footer>
     <div id = "innerBody">
-    <p align="center"> Nu ești înregistrat? Înregistrarea se face de către <a href="#">administratorul</a> site-ului și este disponibilă doar pentru membrii LSAC.</p>
+    <p align="center"> Nu esti inregistrat? Inregistrarea se face de catre <a href="#">administratorul</a> site-ului si este disponibila doar pentru membrii LSAC.</p>
         </div>
     </footer>
-    
-  </div>
- 
-  
-   
-  </body>
+</div>
+</body>
 </html>
