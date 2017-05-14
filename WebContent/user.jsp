@@ -27,7 +27,6 @@ User user = new SqlConnection().getUserInfo(id);
 				<% out.print(user.getName());%>
 			</div>
 		</div>
-<<<<<<< HEAD
  		<div id = "innerBody">
  		<h1> Informatii </h1>
  		   		<table>
@@ -39,52 +38,15 @@ User user = new SqlConnection().getUserInfo(id);
     		 <h1> Articolele postate de <% out.print(user.getName()); %> </h1>
     		 		
     		 			<ul>
-=======
-		<div id="innerBody">
-			<p align="center">
-			<table>
-				<tr>
-					<td>Nume:</td>
-					<td>
-						<% out.print(user.getName()); %>
-					</td>
-				</tr>
-				<tr>
-					<td>Adresa de mail:</td>
-					<td>
-						<%  out.print(user.getMail()); %>
-					</td>
-				</tr>
-				<tr>
-					<td>Data inscrierii:</td>
-					<td>
-						<%  out.print(user.getDate()); %>
-					</td>
-				</tr>
-			</table>
 
-			</p>
-			<br>
-			<br>
-			<p>
-
-				<tr> Articolele postate de <% out.print(user.getName()); %>: </tr>
-    		 			
-			<ul>
->>>>>>> 85f354ebe6a6959d1e3e7f7a0833b5bccd9f5f29
     		 				<%
     		 				ResultSet articles = new SqlConnection().getArticlesByAuthor(id);
     		 				boolean hasAnyArticles = false;
     		 				while(articles.next())
     		 				{
-<<<<<<< HEAD
     		 					hasAnyArticles = true;
     		 					%> <li> <%out.print(articles.getString("title"));%> </li>
-    		 					<%
-=======
-    		 					%> <li> <%out.print(articles.getString("title"));%> </li>	
     		 				<%
->>>>>>> 85f354ebe6a6959d1e3e7f7a0833b5bccd9f5f29
     		 				}
     		 				if (!hasAnyArticles) {
     		 				%>
@@ -102,7 +64,6 @@ User user = new SqlConnection().getUserInfo(id);
     		  if(id2.equals (id1))
     		  { %>
     		  	<a href="creare_articol.jsp" class="button_articol"> Creare articol </a>
-    			
     		  <%} %>
     		 
     	</div>
