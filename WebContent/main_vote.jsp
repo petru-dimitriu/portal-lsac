@@ -8,18 +8,6 @@
 
 <div id = "innerBody">
 
-	Vă rugăm să acordați o notă noului site LSAC!
-		<div class="rating">
-			<span>&#9734;</span>
-			<span>&#9734;</span>
-			<span>&#9734;</span>
-			<span>&#9734;</span>
-			<span>&#x2606;</span>
-		</div>
-		
-</div>
-<div id = "innerBody">
-
 	<script> countDownDate = []; // array
 	</script>
 	
