@@ -1,1 +1,116 @@
-@font-face{font-family:PTSans;src:url(fonts/pt.ttf)}@font-face{font-family:PTSansBold;src:url(fonts/ptbold.ttf)}@font-face{font-family:RobotoBold;src:url(fonts/rb.ttf)}*{font-family:PTSans;font-size:16px;padding:0;margin:0}body{padding:0;border:0}#upperNavBar{width:90%;color:#fff;background-color:#000;padding:0 0 0 10%}#upperNavBar p,#upperNavBar ul,#upperNavBar ul.userTools{width:auto;display:inline}#upperNavBar p li,#upperNavBar ul li,#upperNavBar ul.userTools li{display:inline-block;padding:3px 5px;color:#fff}#upperNavBar p #liArticles:hover,#upperNavBar p li:hover,#upperNavBar ul #liArticles:hover,#upperNavBar ul li:hover,#upperNavBar ul.userTools #liArticles:hover,#upperNavBar ul.userTools li:hover{background-color:#0505ab}#upperNavBar p #liVote:hover,#upperNavBar ul #liVote:hover,#upperNavBar ul.userTools #liVote:hover{background-color:#e6d600}#upperNavBar p #liFiles:hover,#upperNavBar ul #liFiles:hover,#upperNavBar ul.userTools #liFiles:hover{background-color:green}#upperNavBar p a,#upperNavBar ul a,#upperNavBar ul.userTools a{text-decoration:none;color:#fff}#title{font-family:RobotoBold;font-size:300%;line-height:95%}tr:hover{background-color:#9999fc}#body{background-color:#b2b2fd;min-height:95vh;max-width:100vw}#body #upperThird{background-color:#0505ab;color:#fff;margin:0 10%;padding:15px 5%}#body #upperThird #title{font-family:RobotoBold;font-size:260%;text-shadow:0 0 3px #fff;line-height:95%}#body #upperThird #underTitle{padding-top:5px;font-size:95%;text-align:right}#body #innerBody{padding:15px 5%;margin:0 10%;background-color:#e4e4fe;color:#000;height:100%}#body #innerBody p{margin-bottom:10px}ul.userTools{float:right}ul.userTools li{padding:3px 5px}h1{font-size:130%}
+@font-face {
+  font-family: PTSans;
+  src: url(fonts/pt.ttf);
+}
+@font-face {
+  font-family: PTSansBold;
+  src: url(fonts/ptbold.ttf);
+}
+@font-face {
+  font-family: RobotoBold;
+  src: url(fonts/rb.ttf);
+}
+* {
+  font-family: PTSans;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0;
+  border: 0;
+}
+#upperNavBar {
+  width: 90%;
+  color: white;
+  background-color: black;
+  padding: 0px 0 0px 10%;
+}
+#upperNavBar ul,
+#upperNavBar p,
+#upperNavBar ul.userTools {
+  width: auto;
+  display: inline;
+}
+#upperNavBar ul li,
+#upperNavBar p li,
+#upperNavBar ul.userTools li {
+  display: inline-block;
+  padding: 3px 5px 3px 5px;
+  color: white;
+}
+#upperNavBar ul li:hover,
+#upperNavBar p li:hover,
+#upperNavBar ul.userTools li:hover {
+  background-color: #0505ab;
+}
+#upperNavBar ul #liArticles:hover,
+#upperNavBar p #liArticles:hover,
+#upperNavBar ul.userTools #liArticles:hover {
+  background-color: #0505ab;
+}
+#upperNavBar ul #liVote:hover,
+#upperNavBar p #liVote:hover,
+#upperNavBar ul.userTools #liVote:hover {
+  background-color: #e6d600;
+}
+#upperNavBar ul #liFiles:hover,
+#upperNavBar p #liFiles:hover,
+#upperNavBar ul.userTools #liFiles:hover {
+  background-color: green;
+}
+#upperNavBar ul a,
+#upperNavBar p a,
+#upperNavBar ul.userTools a {
+  text-decoration: none;
+  color: white;
+}
+#title {
+  font-family: RobotoBold;
+  font-size: 300%;
+  line-height: 95%;
+}
+tr:hover {
+  background-color: #9999fc;
+}
+#body {
+  background-color: #b2b2fd;
+  min-height: 95vh;
+  max-width: 100vw;
+}
+#body #upperThird {
+  background-color: #0505ab;
+  color: white;
+  margin: 0 10% 0 10%;
+  padding: 15px 5% 15px 5%;
+}
+#body #upperThird #title {
+  font-family: RobotoBold;
+  font-size: 260%;
+  text-shadow: 0px 0px 3px white;
+  line-height: 95%;
+}
+#body #upperThird #underTitle {
+  padding-top: 5px;
+  font-size: 95%;
+  text-align: right;
+}
+#body #innerBody {
+  padding: 15px 5% 15px 5%;
+  margin: 0 10% 0 10%;
+  background-color: #e4e4fe;
+  color: black;
+  height: 100%;
+}
+#body #innerBody p {
+  margin-bottom: 10px;
+}
+ul.userTools {
+  float: right;
+}
+ul.userTools li {
+  padding: 3px 5px 3px 5px;
+}
+h1 {
+  font-size: 130%;
+}
