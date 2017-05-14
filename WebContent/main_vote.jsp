@@ -60,7 +60,7 @@
 	{
 		out.print(sondaje.getString("titlu"));
 		String x=sondaje.getString("optiuni");
-		Date stopVot=sondaje.getDate("stopSondaj");
+		Timestamp stopVot=sondaje.getTimestamp("stopSondaj");
 		String[] optiuni=x.split(",");
 
 		for(int i=0;i<optiuni.length;i++)
