@@ -3,9 +3,6 @@
 
 <div id="upperThird">
 	<div id="title">
-		Ultimile articole
-	</div>
-	<div id="underTitle">
-		13 martie 2017 / Petru Dimitriu
+		Ultimele articole
 	</div>
 </div>

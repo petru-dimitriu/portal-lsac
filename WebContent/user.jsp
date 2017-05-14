@@ -23,8 +23,7 @@ User user = new SqlConnection().getUserInfo(id);
 
 		<div id="upperThird">
 			<div id="title">
-				Utilizatorul
-				<% out.print(user.getName());%>
+				Utilizatorul <% out.print(user.getName());%>
 			</div>
 		</div>
  		<div id = "innerBody">

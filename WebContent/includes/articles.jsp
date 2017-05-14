@@ -8,13 +8,13 @@
 		ResultSet articles = new SqlConnection().getArticles();%>
 		<%while(articles.next()){%>
 		<div id="sectiune">
-			<%out.print(articles.getString("title")); %> 
+			<h1><%out.print(articles.getString("title")); %></h1> 
 			<br> 
-		<%	out.print("Data postării:  " + articles.getDate("postDate")); %>
+		<%	out.print(articles.getDate("postDate")); %>
 			<br>
-		<%	out.print("Postat de:  " + articles.getString("username")); %>
+		<%	out.print(articles.getString("username")); %>
 			<br> <br> <br>
-			<a href="article.jsp?id=<%= articles.getString("id") %>" class="button"> Read more </a>
+			<a href="article.jsp?id=<%= articles.getString("id") %>" class="button"> Citeste </a>
 			</div>
 		<% } %>
 	
