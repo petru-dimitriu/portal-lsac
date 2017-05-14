@@ -3,6 +3,7 @@
     pageEncoding="UTF-8"%>
     
 <div id = "innerBody">
+
 		<div id ="flex-sections">
 			
 			<%
@@ -18,6 +19,7 @@
 				<a href="article.jsp?id=<%= articles.getString("id") %>" class="button"> Citeste </a>
 				</div>
 			<% } %>
+
 	
 		</div>
       

@@ -158,3 +158,13 @@ tr:hover {
 #body #innerBody p {
   margin-bottom: 10px;
 }
+.option {
+  background-color: white;
+  color: black;
+  display: inline-block;
+  text-decoration: none;
+}
+.option:hover {
+  background-color: #e6d600;
+  color: black;
+}

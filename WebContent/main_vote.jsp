@@ -1,4 +1,5 @@
  <link rel="stylesheet" type="text/css" href="style/css/style_headers.css"> 
+<link rel="stylesheet" type="text/css" href="style/css/styleVotes.css"> 
  <%@page import="com.tip.connection.SqlConnection, java.sql.*" %>
  
  <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,8 +17,12 @@
 	int indexSondaj = 0;
 	while(sondaje.next())
 	{
-		out.print(sondaje.getString("titlu"));
-		String x=sondaje.getString("optiuni");
+		String idSondaj=sondaje.getString("id");%>
+		
+		<b><u>
+		<% out.print(sondaje.getString("titlu"));%>
+		</u></b><br>
+		<% String x=sondaje.getString("optiuni");
 		Timestamp stopVot=sondaje.getTimestamp("stopSondaj");
 		String[] optiuni=x.split(",");
 
@@ -25,14 +30,13 @@
 		{ 
 		%>
 			<br>
-			<input type="radio" name="ans" value="${optiuni[i]}"><%out.print(optiuni[i]); %>
+			<div class="option"><a href="registerVote.jsp?id_poll=<%=idSondaj%>&id_ans=<%=i %>"><%out.println(optiuni[i]); %></a></div>
 		<%	
 		}
 		%>
 		
 		<script>countDownDate[<%=indexSondaj%>] = new Date(<% out.print(stopVot.getTime());%>);</script>
 		<br><br>
-		<input type="submit" value="Votează!">
 		
 		<div>
 		<br>
