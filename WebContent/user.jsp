@@ -5,9 +5,7 @@
 int id = Integer.parseInt(request.getParameter("id"));
 
 User user = new SqlConnection().getUserInfo(id);
-System.out.println(id);
-System.out.println(user.getName());
-System.out.println(user.getMail());
+
 %>
 <!DOCTYPE html>
 <html>
