@@ -1,0 +1,2 @@
+INSERT INTO `articles` (`id`, `title`, `username`, `content`, `postDate`) VALUES (NULL, 'Conferința internațională ICSTCC 2017', 'admin', 'Facultatea de Automatică și Calculatoare este organizator principal al manifestării științifice 21st International Conference on System Theory, Control and Computing – ICSTCC 2017. Conferința va avea loc în perioada 19–21 Octombrie 2017, în Sinaia, România. Pentru detalii, vă rugăm să vizitați site-ul conferinței: <a href= \"http://www.icstcc2017.ac.tuiasi.ro/\"> http://www.icstcc2017.ac.tuiasi.ro/ </a>.', '2017-05-11');
+

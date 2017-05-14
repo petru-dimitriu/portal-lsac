@@ -2,6 +2,7 @@ package com.tip.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -16,6 +17,8 @@ public class SqlConnection {
 	private Connection con;
 	private Statement st;
 	private ResultSet rs;
+	PreparedStatement selectUsers;
+	PreparedStatement selectArticles;
 	
 		public SqlConnection(){
 			try{
@@ -110,6 +113,36 @@ public class SqlConnection {
 				System.out.println(ex);
 				return null;
 			}
+		}
+		public void insertUser(String name, String email) {
+			try{
+			Statement st = con.createStatement();
+			String sql = "INSERT INTO users"
+						+ "(name, email)"
+						+ "values (\""+name+"\", \""+email+"\")";
+			st.executeUpdate(sql);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+		}
+		public ResultSet getUsers(){
+			try{
+				PreparedStatement selectUsers = con.prepareStatement("SELECT * FROM users");
+				rs = selectUsers.executeQuery();					
+			}catch (Exception ex){
+				System.out.println(ex);
+			}
+			return rs;
+		}
+		public ResultSet getArticles(int id) {
+			try {
+				selectArticles = con.prepareStatement("SELECT * FROM articles WHERE id = "+ id);
+				rs = selectArticles.executeQuery();
+			} catch (Exception ex) {
+				System.out.println(ex);
+			}
+			return rs;
 		}
 		//		public static boolean close(Connection c){
 //			try{

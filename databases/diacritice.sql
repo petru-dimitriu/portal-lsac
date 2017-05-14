@@ -1,0 +1,1 @@
+ALTER TABLE `nume_tabela` CONVERT to CHARACTER SET utf8;
