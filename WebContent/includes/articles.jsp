@@ -3,22 +3,23 @@
     pageEncoding="UTF-8"%>
     
 <div id = "innerBody">
-
-		<%
-		ResultSet articles = new SqlConnection().getArticles();%>
-		<%while(articles.next()){%>
-		<div id="sectiune">
-			<h1><%out.print(articles.getString("title")); %></h1> 
-			<br> 
-		<%	out.print(articles.getDate("postDate")); %>
-			<br>
-		<%	out.print(articles.getString("username")); %>
-			<br> <br> <br>
-			<a href="article.jsp?id=<%= articles.getString("id") %>" class="button"> Citeste </a>
-			</div>
-		<% } %>
+		<div id ="flex-sections">
+			
+			<%
+			ResultSet articles = new SqlConnection().getArticles();%>
+			<%while(articles.next()){%>
+			<div id="sectiune">
+				<h1><%out.print(articles.getString("title")); %></h1> 
+				<br> 
+			<%	out.print(articles.getDate("postDate")); %>
+				<br>
+			<%	out.print(articles.getString("username")); %>
+				<br> <br> <br>
+				<a href="article.jsp?id=<%= articles.getString("id") %>" class="button"> Citeste </a>
+				</div>
+			<% } %>
 	
-	
+		</div>
       
 </div>
 
