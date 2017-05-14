@@ -19,6 +19,7 @@ public class SqlConnection {
 	private ResultSet rs;
 	PreparedStatement selectUsers;
 	PreparedStatement selectArticles;
+	PreparedStatement selectSondaje;
 	
 		public SqlConnection(){
 			try{
@@ -148,6 +149,15 @@ public class SqlConnection {
 			try{
 				selectArticles = con.prepareStatement("SELECT * FROM articles");
 				rs = selectArticles.executeQuery();					
+			}catch (Exception ex){
+				System.out.println(ex);
+			}
+			return rs;
+		}
+		public ResultSet getSondaje(){
+			try{
+				selectSondaje = con.prepareStatement("SELECT * FROM sondaje");
+				rs = selectSondaje.executeQuery();					
 			}catch (Exception ex){
 				System.out.println(ex);
 			}

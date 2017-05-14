@@ -20,41 +20,11 @@
 </div>
 <div id = "innerBody">
 
-	<%!
-	public class Sondaje {
-		
-		private Connection con;
-		private Statement st;
-		private ResultSet rs;
-		PreparedStatement selectSondaje;
-		
-			public Sondaje(){
-				try{
-					Class.forName("com.mysql.jdbc.Driver");
-					con = DriverManager.getConnection("jdbc:mysql://localhost:3306/portal", "root", "");
-					selectSondaje = con.prepareStatement("SELECT * FROM sondaje");
-					
-				}catch(Exception ex){
-					throw new Error(ex);
-				}
-			}
-			
-			public ResultSet getSondaje(){
-				try{
-					rs = selectSondaje.executeQuery();					
-				}catch (Exception ex){
-					System.out.println(ex);
-				}
-				return rs;
-			}
-	}%>
-	
 	<script> countDownDate = []; // array
 	</script>
 	
 	<% 
-	Sondaje sondaj = new Sondaje();
-	ResultSet sondaje = sondaj.getSondaje();
+	ResultSet sondaje = new SqlConnection().getSondaje();
 	int indexSondaj = 0;
 	while(sondaje.next())
 	{
