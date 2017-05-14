@@ -1,7 +1,7 @@
 <%@page import="com.tip.connection.*, java.sql.*"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<% int id = Integer.parseInt(request.getParameter("id")); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,11 +26,11 @@
 		private ResultSet rs;
 		PreparedStatement selectArticles;
 
-		public Article() {
+		public Article(int id) {
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/portal", "root", "");
-				selectArticles = con.prepareStatement("SELECT * FROM articles");
+				selectArticles = con.prepareStatement("SELECT * FROM articles WHERE id = "+ id);
 			} catch (Exception ex) {
 				throw new Error(ex);
 			}
@@ -45,12 +45,14 @@
 			return rs;
 		}
 	}%>
+	
 			<%
-					Article article = new Article();
+					Article article = new Article(id);
 					ResultSet articles = article.getArticles();
 					while (articles.next()) {%>
 			<div id="title">
-				<%out.print(articles.getString("title")); %>
+				<%
+				out.print(articles.getString("title")); %>
 			</div>
 			<div id="underTitle">
 				<%	out.print("Data postării:  " + articles.getDate("postDate")); %>
