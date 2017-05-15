@@ -300,11 +300,14 @@ public class SqlConnection {
 				System.out.println("Eroare in registerVote:" + ex);
 			}
 		}
-		public List<Poll> getPolls()
+		public List<Poll> getPolls(boolean active)
 		{
 			List<Poll> result = null;
 			try{
-				selectArticles = con.prepareStatement("SELECT * FROM sondaje");
+				String query = "SELECT * FROM sondaje ";
+				if (active)
+					query += "WHERE now() < stopSondaj";
+				selectArticles = con.prepareStatement(query);
 				rs = selectArticles.executeQuery();
 				result = new ArrayList<>();
 				while (rs.next())

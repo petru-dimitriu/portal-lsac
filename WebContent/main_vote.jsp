@@ -39,7 +39,7 @@
 	
 	<% 
 	SqlConnection conn = new SqlConnection();
-	List<Poll> polls = conn.getPolls(); 
+	List<Poll> polls = conn.getPolls(true); 
 	int indexSondaj = 0;
 	for (Poll poll : polls)
 	{
