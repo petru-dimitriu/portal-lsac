@@ -5,6 +5,24 @@
 	pageEncoding="UTF-8"%>
 <%if(session.getAttribute("id") != null && session !=null){%>
 <br>
+
+<script>
+function deleteArticle(id) {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+				if (this.responseText == "success")
+				{
+					$("#b2").click(); // reload
+				}
+					
+		}
+	};
+	xhttp.open("GET", "DeleteArticle?id=" + id, true);
+	xhttp.send();
+}
+</script>
+
 <div id="innerBody">
 
 	<% 
@@ -16,7 +34,8 @@
 	<div>
 			<div>
 			<div class = "rightFloater">
-				<a href="creare_articol.jsp?id=<%= article.getId() %>">Edit</a> / Delete</div>
+				<a href="creare_articol.jsp?id=<%= article.getId() %>">Edit</a> /
+				<a href ="javascript:deleteArticle(<%= article.getId() %>)"> Delete</a></div>
 			<div> 
 				<%=article.getTitle() %>
 			</div>

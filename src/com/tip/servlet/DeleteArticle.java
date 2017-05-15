@@ -1,6 +1,7 @@
 package com.tip.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.tip.connection.SqlConnection;
+import com.tip.data.Article;
 
 /**
  * Servlet implementation class DeleteArticle
@@ -29,7 +31,7 @@ public class DeleteArticle extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
 	}
 
 	/**
@@ -37,11 +39,18 @@ public class DeleteArticle extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int id = Integer.parseInt(request.getParameter("id"));
+		int articleId = Integer.parseInt(request.getParameter("id"));
+		if (articleId == 0 || request.getSession().getAttribute("id") == null)
+			return;
 		
-		if (id != 0){
-			new SqlConnection().deleteArticle(id);
-			response.sendRedirect("index.jsp");
+		int userId = Integer.parseInt((String)request.getSession().getAttribute("id"));
+		SqlConnection conn = new SqlConnection();
+		
+		Article article = conn.getArticle(articleId);
+		if (article.getUserId() == userId || ((String)request.getSession().getAttribute("username")).equals("admin"))
+		{
+			conn.deleteArticle(articleId);
+			response.getWriter().append("success");			
 		}
 	}
 
