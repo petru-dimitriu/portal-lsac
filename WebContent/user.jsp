@@ -76,11 +76,11 @@
 						while (articles.next()) {
 							hasAnyArticles = true;
 				%>
-				<li>
+				<li> <a href="article.jsp?id=<%=articles.getInt("id") %>">
 					<%
 						out.print(articles.getString("title"));
 					%>
-				</li>
+				</a> </li>
 				<%
 					}
 						if (!hasAnyArticles) {

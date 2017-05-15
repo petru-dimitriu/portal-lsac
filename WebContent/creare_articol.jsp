@@ -21,19 +21,27 @@
 	if (request.getParameter("id") != null)
 	{
 		id = Integer.parseInt((String)request.getParameter("id"));
-		System.out.println("id is " + id);
 	}
 	Article article = null;
 	if (id != -1)
 	{
 		article = new SqlConnection().getArticle(id);
 	}
+	
 %>
 	<%if(session.getAttribute("id") != null && session !=null){%>
 	<div id="body">
 
 		<%@ include file="menu.jsp"%>
 
+		<%
+		if (article != null && ! session.getAttribute("username").equals("admin"))
+		{
+			int userId = Integer.parseInt((String)session.getAttribute("id"));
+			if (article.getUserId() != userId) // nu e articolul userului => nu permite
+					article = null;
+		}
+		%>
 		<div id="upperThird">
 			<div id="title">
 			<% if (article != null) {%>
@@ -51,9 +59,9 @@
 		<form method="post" action="AddArticle">
 		<input type="hidden" name="articleId" value="<%=id%>">
 		<input type="hidden" name="id" value="${sessionScope.id}">
-		Titlu:<br><input type="text" name="title" style="width:100%" value ="<% if (id != -1) out.print(article.getTitle());%>"><br><br>
+		Titlu:<br><input type="text" name="title" style="width:100%" value ="<% if (article != null) out.print(article.getTitle());%>"><br><br>
 		Conținut:<br>    <textarea name="content" rows="10" style="width:100%">
-		<% if (id != -1)
+		<% if (article != null)
 		{
 			out.print(article.getContents());
 		}%>
