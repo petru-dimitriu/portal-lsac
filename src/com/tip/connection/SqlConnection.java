@@ -202,6 +202,23 @@ public class SqlConnection {
 			}
 			return rs;
 		}
+		public Article getArticle(int id) {
+			Article currentArticle = null;
+			try {
+				selectArticles = con.prepareStatement("SELECT * FROM articles WHERE id = "+ id);
+				rs = selectArticles.executeQuery();
+				rs.next();
+				currentArticle = new Article();
+				currentArticle.setId(rs.getInt("id"));
+				currentArticle.setContents(rs.getString("content"));
+				currentArticle.setTitle(rs.getString("title"));
+				currentArticle.setTimestamp(rs.getTimestamp("postDate"));
+				currentArticle.setUserId(rs.getInt("user_id"));
+			} catch (Exception ex) {
+				System.out.println(ex);
+			}
+			return currentArticle;
+		}
 		public ResultSet getArticlesById(int id) {
 			try {
 				selectArticles = con.prepareStatement("SELECT * FROM articles a WHERE a.user_id= " + id );

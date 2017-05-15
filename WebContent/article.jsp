@@ -1,4 +1,4 @@
-<%@page import="com.tip.connection.SqlConnection, java.sql.*"%>
+<%@page import="com.tip.connection.SqlConnection, java.sql.*, com.tip.data.*, java.text.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <% int id = Integer.parseInt(request.getParameter("id")); %>
@@ -18,28 +18,31 @@
 		<div id="upperThird">
 
 			<%
-					ResultSet articles = new SqlConnection().getArticles(id);
-					while (articles.next()) {%>
+				SqlConnection conn = new SqlConnection();
+					Article article = conn.getArticle(id);
+					%>
 			<div id="title">
 				<%
-				out.print(articles.getString("title")); %>
+				out.print(article.getTitle()); %>
 			</div>
 			<div id="underTitle">
-				<%	out.print("Data postării:  " + articles.getDate("postDate")); %>
+				<%	out.print("Data postării:  " + new SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date(article.getTimestamp().getTime()))); %>
 				<br>
-				<%	out.print("Postat de:  " + articles.getString("user_id")); %>
+				<%	out.print("Postat de: "); %>
+				<a href="user.jsp?id=<%=article.getUserId()%>">
+			<%	out.print(conn.getUserInfo(article.getUserId()).getName()); %>
+			</a>
+			 
 			</div>
 
 		</div>
 
 		<div id="innerBody">
 			<%
-					out.print(articles.getString("content"));
+					out.print(article.getContents());
 				%>
 			<br>
-			<%
-					}
-				%>
+
 
 		</div>
 

@@ -1,9 +1,9 @@
 <%@page import="com.tip.connection.*, java.sql.*" %>
 <div id = "innerBody">
-	<h1>Adaugarea unui utilizator nou</h1>
+	<h1>Adaugare utilizator nou</h1>
 		<form method = "post" action="AddUser">
                     
-                      <div style="width: 60%; margin: 0 auto;">
+                      <div style="width: 60%;">
                       
   				      <p>Nume</p>
   				      <input name="username" type="text" required>
@@ -12,7 +12,7 @@
   				      <input name="email" type="email" required>
   				      <br>
   				      <br>
-                      <button type="submit">Submit</button>
+                      <button type="submit">Adaugare</button>
                       </div>
                       </form>
 </div>
