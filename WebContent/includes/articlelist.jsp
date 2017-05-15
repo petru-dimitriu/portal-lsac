@@ -1,14 +1,19 @@
-<%@page import="com.tip.connection.SqlConnection, java.sql.*, java.util.*, com.tip.data.*" %>
+
+<%@page import="com.tip.connection.SqlConnection, java.sql.*, java.util.*, com.tip.data.*, java.text.*" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <br>
 <div id = "innerBody">
 
-
-
-	<%List<Article> articles = new SqlConnection().getArticles();%>
+<% 
+			SqlConnection conn = new SqlConnection();
+			List<Article> articles = conn.getArticles();%>
+			
 	<h1 style="text-align:center">Lista articole</h1>
-	<%for (Article article: articles){%>
+		<%for (Article article : articles){%>
 		<div id="userBox">
-		<h2><a style="text-decoration: none;"href="../article.jsp?id=<%= article.getId()  %>"><% out.print(article.getTitle()); %></a></h2>
+		<h2><a style="text-decoration: none;"href="../article.jsp?id=<%= article.getId() %>"><% out.print(article.getTitle()); %></a></h2>
 		
 		<form method = "post" class="edit-form" action="includes/edit_article.jsp"> 
 			
