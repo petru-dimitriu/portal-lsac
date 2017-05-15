@@ -10,16 +10,19 @@
 <link href="style/css/styleFiles.css" rel="stylesheet">
 </head>
 <body>
+<%
+		if (session.getAttribute("id") == null || session == null) {
+	%>
 	<div id="body">
 
 		<%@ include file="menu.jsp"%>
 
-		<%@ include file="header_files.jsp"%>
+		<%@ include file="header_notLogged.jsp"%>
 
 		<div id="innerBody">
 
-			<h2>Trebuie sa fii logat pentru a avea acces la
-				functionalitatile site-ului!!</h2>
+			<h2>Trebuie să fii logat pentru a avea acces la
+				funcționalitățile site-ului!!</h2>
 
 
 		</div>
@@ -29,5 +32,8 @@
 
 
 	</div>
+	<%}else{
+		response.sendRedirect("/index.jsp");
+	}%>
 </body>
 </html>
