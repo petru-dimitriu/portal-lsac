@@ -33,7 +33,6 @@ User user = new SqlConnection().getUserInfo(id);
  		   		<tr> <td> Adresa de mail: </td> <td> <%  out.print(user.getMail()); %> </td> </tr>
  		   		<tr> <td> Data inscrierii: </td> <td> <%  out.print(user.getDate()); %> </td> </tr>
  		   		</table>
-    		 <br><br>
     		 <h1> Articolele postate de <% out.print(user.getName()); %> </h1>
     		 		
     		 			<ul>
@@ -55,15 +54,12 @@ User user = new SqlConnection().getUserInfo(id);
     		 				
     		 			</ul>
     		 </p>
-    		 <br><br>
-    		 
     		 <% 
     		 String id1 = (String)request.getParameter("id");
     		 String id2 = (String)session.getAttribute("id");
     		  if(id2.equals (id1))
     		  { %>
-    		  
-    		  	<a href="creare_articol.jsp" class="button_articol"> Creare articol </a>
+    		  	<a href="creare_articol.jsp" class="button_articol"> Scrie un articol! </a>
     		  <%} %>
     		 
     	</div>

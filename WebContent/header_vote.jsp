@@ -5,12 +5,6 @@
 
  <div id = "upperThird">
         <div id = "title" >
-          Liga are un nou portal web, realizat integral de studenți ai Facultății
-        </div>
-        <div id = "underTitle">
-          13 aprilie 2017 / #
-  
-          
-
+          Liga votează!
         </div>
 </div>

@@ -112,7 +112,7 @@ ul.userTools li {
   padding: 3px 5px 3px 5px;
 }
 h1 {
-  font-size: 130%;
+  font-size: 150%;
 }
 #flex-sections {
   display: flex;
@@ -158,8 +158,14 @@ tr:hover {
 #body #innerBody p {
   margin-bottom: 10px;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 .option {
-  background-color: white;
+  background-color: #fff680;
+  margin: 5px 5px 5px 0px;
+  padding: 5px 5px 5px 5px;
   color: black;
   display: inline-block;
   text-decoration: none;
@@ -167,4 +173,9 @@ tr:hover {
 .option:hover {
   background-color: #e6d600;
   color: black;
+}
+.poll {
+  background-color: #fffab3;
+  margin: 5px 5px 5px 0;
+  padding: 5px 5px 5px 5px;
 }

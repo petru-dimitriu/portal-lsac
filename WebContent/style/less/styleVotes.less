@@ -8,9 +8,17 @@ tr:hover
 #body {
   .body (@lsacYellow);
 } 
+
+a
+{
+	text-decoration: none;
+	color: black;
+}
+
 .option{
-    
-    background-color: white; 
+	background-color: lighten(@lsacYellow,30%);
+	margin: 5px 5px 5px 0px;
+    padding: 5px 5px 5px 5px;
     color: black; 
     display: inline-block;
     text-decoration: none;
@@ -19,4 +27,11 @@ tr:hover
 .option:hover {
     background-color: @lsacYellow;
     color: black;
+}
+
+.poll 
+{
+	background-color: lighten(@lsacYellow,40%);
+	margin: 5px 5px 5px 0;
+	padding: 5px 5px 5px 5px;
 }

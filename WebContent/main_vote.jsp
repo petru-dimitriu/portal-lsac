@@ -18,10 +18,10 @@
 	while(sondaje.next())
 	{
 		String idSondaj=sondaje.getString("id");%>
-		
-		<b><u>
+		<div class="poll">
+		<h1>
 		<% out.print(sondaje.getString("titlu"));%>
-		</u></b><br>
+		</h1>
 		<% String x=sondaje.getString("optiuni");
 		Timestamp stopVot=sondaje.getTimestamp("stopSondaj");
 		String[] optiuni=x.split(",");
@@ -29,18 +29,18 @@
 		for(int i=0;i<optiuni.length;i++)
 		{ 
 		%>
-			<br>
 			<div class="option"><a href="registerVote.jsp?id_poll=<%=idSondaj%>&id_ans=<%=i %>"><%out.println(optiuni[i]); %></a></div>
+			<br>
 		<%	
 		}
 		%>
 		
 		<script>countDownDate[<%=indexSondaj%>] = new Date(<% out.print(stopVot.getTime());%>);</script>
-		<br><br>
 		
 		<div>
 		<br>
 		Timpul ramas de votare : <span id="stop<%=indexSondaj%>"> </span>
+		</div>
 		</div>
 		<br><br>
 		
