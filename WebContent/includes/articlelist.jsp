@@ -10,7 +10,7 @@
 		<div id="userBox">
 		<h2><a style="text-decoration: none;"href="../article.jsp?id=<%= article.getId()  %>"><% out.print(article.getTitle()); %></a></h2>
 		
-		<form method = "post" class="edit-form" action="includes/edit_article.jsp">
+		<form method = "post" class="edit-form" action="includes/edit_article.jsp"> 
 			
   				     <input name="title" type="hidden"  value="<%= article.getTitle() %>">
   					<input name="content" type="hidden" value="<%= article.getContents() %>"> 
