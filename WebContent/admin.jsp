@@ -1,6 +1,7 @@
+<%@page
+	import="com.tip.servlet.LoginSession, java.sql.*, com.tip.data.*, java.text.*, java.lang.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,6 +74,11 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+	<%if(session.getAttribute("id") != null && session != null){
+		String i = "" + session.getAttribute("id") + "";
+		int id = Integer.parseInt(i);
+		if (id == 1) {
+	%>
 	<div id="body">
 
 		<%@ include file="menu.jsp"%>
@@ -109,7 +115,13 @@
 	</div>
 	<%@ include file="footer.jsp"%>
 
-
-	</div>
+	<%
+		} else {
+			response.sendRedirect("/index.jsp");
+		}
+	}else {
+		response.sendRedirect("/index.jsp");
+	}
+	%>
 </body>
 </html>
