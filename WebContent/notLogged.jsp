@@ -10,7 +10,6 @@
 <link href="style/css/styleFiles.css" rel="stylesheet">
 </head>
 <body>
-	<%if(session.getAttribute("id") != null && session !=null){%>
 	<div id="body">
 
 		<%@ include file="menu.jsp"%>
@@ -19,12 +18,8 @@
 
 		<div id="innerBody">
 
-			<form method="post" action="UploadServlet"
-				enctype="multipart/form-data">
-				<br> Upload fisier: <input type="file" name="file" size="20" />
-
-				<input type="submit" value="Trimite">
-			</form>
+			<h2>Trebuie sa fii logat pentru a avea acces la
+				functionalitatile site-ului!!</h2>
 
 
 		</div>
@@ -34,8 +29,5 @@
 
 
 	</div>
-	<%}else{
-		response.sendRedirect("/notLogged.jsp");
-	}%>
 </body>
 </html>

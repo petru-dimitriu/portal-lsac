@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="com.tip.connection.*, java.sql.*" %>
+<%if(session.getAttribute("id") != null && session !=null){%>
 <div id = "innerBody">
 	
 		<form method="post" action="AddArticle">
@@ -10,3 +11,6 @@
 		<input type="submit" value="Trimite">
 		</form>	
 </div>
+<%}else{
+		response.sendRedirect("/notLogged.jsp");
+	}%>

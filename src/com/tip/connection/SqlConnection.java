@@ -306,23 +306,20 @@ public class SqlConnection {
 			try{
 				String query = "SELECT * FROM sondaje ";
 				if (active)
-					query += "WHERE now() < stopSondaj ORDER BY stopSondaj DESC";
-				else
-					query += "WHERE now() > stopSondaj ORDER BY stopSondaj DESC LIMIT 5";
+					query += "WHERE now() < stopSondaj";
 				selectArticles = con.prepareStatement(query);
 				rs = selectArticles.executeQuery();
 				result = new ArrayList<>();
 				while (rs.next())
 				{
-					Poll currentPoll = new Poll();
-					currentPoll.setId(rs.getInt("id"));
-					currentPoll.setTitle(rs.getString("titlu"));
-					currentPoll.setStart(rs.getTimestamp("startSondaj"));
-					currentPoll.setStop(rs.getTimestamp("stopSondaj"));
+					Poll currentArticle = new Poll();
+					currentArticle.setId(rs.getInt("id"));
+					currentArticle.setTitle(rs.getString("titlu"));
+					currentArticle.setStart(rs.getTimestamp("startSondaj"));
+					currentArticle.setStop(rs.getTimestamp("stopSondaj"));
 					String options = rs.getString("optiuni");
-					currentPoll.setOptions(new ArrayList<String>(Arrays.asList(options.split(","))));
-					currentPoll.setValues(getNumbersForPoll(currentPoll.getId()));
-					result.add(currentPoll);
+					currentArticle.setOptions(new ArrayList<String>(Arrays.asList(options.split(","))));
+					result.add(currentArticle);
 				}
 			}catch (Exception ex){
 				System.out.println(ex);
@@ -338,34 +335,6 @@ public class SqlConnection {
 				return false;
 			}
 		}
-		public List<Integer> getNumbersForPoll (int pollId)
-		{
-			ArrayList<Integer> result = new ArrayList<>();
-			int nrOptions = 0;
-			try{
-				String query = "SELECT nrOptiuni FROM sondaje WHERE id = " + pollId ;
-				PreparedStatement prepared = con.prepareStatement(query);
-				ResultSet rs = prepared.executeQuery();
-				rs.next();
-				nrOptions = rs.getInt(1);
-				prepared.close();
-				
-				for (int i = 0; i<nrOptions;i++)
-				{
-					query = "SELECT count(*) FROM votes WHERE id_poll = " + pollId + " AND id_ans = " + i ;
-					prepared = con.prepareStatement(query);
-					rs = prepared.executeQuery();
-					rs.next();
-					result.add(rs.getInt(1));
-					prepared.close();
-				}
-				
-			}
-			catch (Exception ex)
-			{
-				System.out.println(ex);
-			}
-			return result;
-		}
+		
 		
 }

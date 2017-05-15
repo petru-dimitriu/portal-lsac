@@ -10,6 +10,7 @@
 <link href="style/css/styleMain.css" rel="stylesheet">
 </head>
 <body>
+	<%if(session.getAttribute("id") != null && session !=null){%>
 	<div id="body">
 
 		<%@ include file="menu.jsp"%>
@@ -21,5 +22,8 @@
 		<%@ include file="footer.jsp"%>
 
 	</div>
+	<%}else{
+		response.sendRedirect("/notLogged.jsp");
+	}%>
 </body>
 </html>

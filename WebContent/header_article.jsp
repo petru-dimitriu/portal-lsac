@@ -2,7 +2,5 @@
 	pageEncoding="UTF-8"%>
 
 <div id="upperThird">
-	<div id="title">
-		Ultimele articole
-	</div>
+	<div id="title">Ultimele articole</div>
 </div>
