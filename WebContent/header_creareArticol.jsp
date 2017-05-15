@@ -3,7 +3,7 @@
 
 <div id="upperThird">
 	<div id="title">
-		Crearea unui articol nou
+		Scrie un nou articol
 	</div>
 	<div id="underTitle">
 		
