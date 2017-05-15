@@ -38,12 +38,28 @@ public class AddArticle extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		SqlConnection connection = new SqlConnection();
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		int id = Integer.parseInt(request.getParameter("id"));
-		if (!title.equals(null) && !title.equals("") && !content.equals(null) && !content.equals("") && id!=0){
-			new SqlConnection().addArticle(title, content, id);
-			response.sendRedirect("articles.jsp");
+		int userId = Integer.parseInt(request.getParameter("id"));
+		int articleId = Integer.parseInt(request.getParameter("articleId"));
+		
+		if (articleId != -1)
+			connection.deleteArticle(articleId); // sterge articolul daca exista deja (il editam)
+		
+		if (!title.equals(null) && !title.equals("") && !content.equals(null) && !content.equals("") && userId!=0){
+			{
+				if (articleId == -1)
+				{
+					connection.addArticle(title, content, userId);
+					response.sendRedirect("articles.jsp");
+				}
+				else
+				{
+					connection.addArticle(title, content, userId, articleId);
+					response.sendRedirect("articles.jsp");
+				}
+			}
 		}else{
 			request.setAttribute("mesaj", "Nu trebuie sa existe campuri goale!");
 			request.getRequestDispatcher("admin.jsp").forward(request, response);

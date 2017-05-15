@@ -140,7 +140,19 @@ public class SqlConnection {
 			}catch(Exception e){
 				e.printStackTrace();
 			}
-			
+		}
+		
+		public void addArticle(String title, String content, int id, int articleId)
+		{
+			try{
+				Statement st = con.createStatement();
+				String sql = "INSERT INTO articles"
+							+ "(id, title, content, user_id)"
+							+ "values (" + articleId + ",\""+title+"\", \""+content+"\", \""+id+"\" )" ;
+				st.executeUpdate(sql);
+				}catch(Exception e){
+					e.printStackTrace();
+				}
 		}
 		
 		public ResultSet getUsers(){

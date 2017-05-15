@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@page
+	import="com.tip.connection.*, java.sql.*, com.tip.data.*, java.util.*, java.text.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,17 +15,55 @@
 
 </head>
 <body>
+
+<%
+	int id = -1;
+	if (request.getParameter("id") != null)
+	{
+		id = Integer.parseInt((String)request.getParameter("id"));
+		System.out.println("id is " + id);
+	}
+	Article article = null;
+	if (id != -1)
+	{
+		article = new SqlConnection().getArticle(id);
+	}
+%>
 	<%if(session.getAttribute("id") != null && session !=null){%>
 	<div id="body">
 
 		<%@ include file="menu.jsp"%>
 
-		<%@ include file="header_creareArticol.jsp"%>
+		<div id="upperThird">
+			<div id="title">
+			<% if (article != null) {%>
+				Editeaza articolul "<%=article.getTitle() %>"
+			<% } else { %>
+				Scrie un articol nou
+			<% } %>
+			</div>
+			<div id="underTitle">
+				
+			</div>
+		</div>
 
-		<%@ include file="includes/addArticle.jsp"%>
+		<div id = "innerBody">
+		<form method="post" action="AddArticle">
+		<input type="hidden" name="articleId" value="<%=id%>">
+		<input type="hidden" name="id" value="${sessionScope.id}">
+		Titlu:<br><input type="text" name="title" style="width:100%" value ="<% if (id != -1) out.print(article.getTitle());%>"><br><br>
+		Conținut:<br>    <textarea name="content" rows="10" style="width:100%">
+		<% if (id != -1)
+		{
+			out.print(article.getContents());
+		}%>
+		</textarea><br>
+		<input type="submit" value="Trimite">
+		</form>	
+	</div>
+
 
 		<%@ include file="footer.jsp"%>
-
 
 	</div>
 	<%}else{
