@@ -154,7 +154,16 @@ public class SqlConnection {
 			try{
 			Statement st = con.createStatement();
 			String sql = "UPDATE users SET name = " + "\"" +name + "\"" +"," + "email =" + "\"" +email + "\"" + "WHERE id_user = " + id;
-			System.out.print(sql);
+			st.executeUpdate(sql);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+		}
+		public void editArticle(String title, String content, int id) {
+			try{
+			Statement st = con.createStatement();
+			String sql = "UPDATE articles SET title = " + "\"" +title + "\"" +"," + "content =" + "\"" +content + "\"" + "WHERE id = " + id;
 			st.executeUpdate(sql);
 			}catch(Exception e){
 				e.printStackTrace();
@@ -165,7 +174,16 @@ public class SqlConnection {
 			try{
 			Statement st = con.createStatement();
 			String sql = "DELETE FROM users WHERE name = " + "\"" +name + "\"";
-			System.out.print(sql);
+			st.executeUpdate(sql);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+		}
+		public void deleteArticle(int id) {
+			try{
+			Statement st = con.createStatement();
+			String sql = "DELETE FROM articles WHERE id =" + id;
 			st.executeUpdate(sql);
 			}catch(Exception e){
 				e.printStackTrace();

@@ -75,7 +75,7 @@
 
 	<div id="admin_buttons">
 	<input type="button" id="b1" value="Administrare utilizatori">
-	<input type="button" id="b2" value="Administrare galerie">
+	<input type="button" id="b2" value="Administrare articole">
 	<input type="button" id="b3" value="Administrare poll">
 	</div>
 </div>
@@ -88,6 +88,11 @@
 $(document).ready(function(){
 	$("#b1").click(function(){
 		$("#target").load("includes/userlist.jsp");
+	});
+});
+$(document).ready(function(){
+	$("#b2").click(function(){
+		$("#target").load("includes/articlelist.jsp");
 	});
 });
 </script>
