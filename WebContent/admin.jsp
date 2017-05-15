@@ -75,9 +75,8 @@
 </head>
 <body>
 	<%if(session.getAttribute("id") != null && session != null){
-		String i = "" + session.getAttribute("id") + "";
-		int id = Integer.parseInt(i);
-		if (id == 1) {
+		String v = "" + session.getAttribute("id") + "";
+		if (Integer.parseInt(v) == 1) {
 	%>
 	<div id="body">
 

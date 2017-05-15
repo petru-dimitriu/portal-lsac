@@ -35,7 +35,15 @@
 
 
 		</li>
+		
 		<li><a href="user.jsp?id=${sessionScope.id}">/${sessionScope.username}</a></li>
+		<%if(session.getAttribute("id") != null && session != null){
+		String i = "" + session.getAttribute("id") + "";
+		if (Integer.parseInt(i) == 1) {
+	%>
+		<li><a href="admin.jsp">Panou admin</a></li>
+	<% }
+	}%>
 		<li><a href="Logout">/ieșire</a></li>
 	</ul>
 	<%
