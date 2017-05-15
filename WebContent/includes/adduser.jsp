@@ -16,5 +16,5 @@
 	</form>
 </div>
 <%}else{
-		response.sendRedirect("/notLogged.jsp");
+		response.sendRedirect("notLogged.jsp");
 	}%>

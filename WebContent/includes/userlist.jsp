@@ -54,6 +54,6 @@ $(document).ready(function(){
 
 </div>
 <%}else{
-		response.sendRedirect("/notLogged.jsp");
+		response.sendRedirect("notLogged.jsp");
 	}%>
 
