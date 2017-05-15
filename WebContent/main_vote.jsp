@@ -1,6 +1,6 @@
  <link rel="stylesheet" type="text/css" href="style/css/style_headers.css"> 
 <link rel="stylesheet" type="text/css" href="style/css/styleVotes.css"> 
- <%@page import="com.tip.connection.SqlConnection, java.sql.*" %>
+ <%@page import="com.tip.connection.SqlConnection, java.sql.*, java.util.*, com.tip.data.*" %>
  
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -38,26 +38,30 @@
 	</script>
 	
 	<% 
-	ResultSet sondaje = new SqlConnection().getSondaje();
+	SqlConnection conn = new SqlConnection();
+	List<Poll> polls = conn.getPolls(); 
 	int indexSondaj = 0;
-	while(sondaje.next())
+	for (Poll poll : polls)
 	{
-		String idSondaj=sondaje.getString("id");%>
+		int idSondaj=poll.getId();%>
 		<div class="poll" id="poll<%=idSondaj%>">
 		<div id="rightFloater"> AMR: <span id="stop<%=indexSondaj%>"> </span>
 			<br><span class="msg" id="msg<%= idSondaj %>"></span>
 		</div>
 		<h1>
-		<% out.print(sondaje.getString("titlu"));%>
+		<% out.print(poll.getTitle());%>
 		</h1>
-		<% String x=sondaje.getString("optiuni");
-		Timestamp stopVot=sondaje.getTimestamp("stopSondaj");
-		String[] optiuni=x.split(",");
-
-		for(int i=0;i<optiuni.length;i++)
+		<%
+		
+		Timestamp stopVot=poll.getStop();
+		
+		List<String> options=poll.getOptions();
+		int i = 0;
+		for(String option: options)
 		{ 
+			i++;
 		%>
-			<div class="option"><a href="javascript:voteFor(<%=idSondaj%>,<%=i %>)"><%out.println(optiuni[i]); %></a></div>
+			<div class="option"><a href="javascript:voteFor(<%=idSondaj%>,<%=i %>)"><%out.println(option); %></a></div>
 			<br>
 		<%	
 		}

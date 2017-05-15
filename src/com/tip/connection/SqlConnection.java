@@ -6,10 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 import com.tip.data.Article;
+import com.tip.data.Poll;
 import com.tip.data.SessionUser;
 import com.tip.data.User;
 
@@ -298,14 +300,38 @@ public class SqlConnection {
 				System.out.println("Eroare in registerVote:" + ex);
 			}
 		}
-		//		public static boolean close(Connection c){
-//			try{
-//				c.close();
-//				return true;
-//			}catch(Exception e){
-//				return false;
-//			}
-//		}
+		public List<Poll> getPolls()
+		{
+			List<Poll> result = null;
+			try{
+				selectArticles = con.prepareStatement("SELECT * FROM sondaje");
+				rs = selectArticles.executeQuery();
+				result = new ArrayList<>();
+				while (rs.next())
+				{
+					Poll currentArticle = new Poll();
+					currentArticle.setId(rs.getInt("id"));
+					currentArticle.setTitle(rs.getString("titlu"));
+					currentArticle.setStart(rs.getTimestamp("startSondaj"));
+					currentArticle.setStop(rs.getTimestamp("stopSondaj"));
+					String options = rs.getString("optiuni");
+					currentArticle.setOptions(new ArrayList<String>(Arrays.asList(options.split(","))));
+					result.add(currentArticle);
+				}
+			}catch (Exception ex){
+				System.out.println(ex);
+			}
+			return result;
+		}
+		
+		public static boolean close(Connection c){
+			try{
+				c.close();
+				return true;
+			}catch(Exception e){
+				return false;
+			}
+		}
 		
 		
 }
