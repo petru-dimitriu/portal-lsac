@@ -34,8 +34,8 @@ function deleteArticle(id) {
 	<div>
 			<div>
 			<div class = "rightFloater">
-				<a href="creare_articol.jsp?id=<%= article.getId() %>">Edit</a> /
-				<a href ="javascript:deleteArticle(<%= article.getId() %>)"> Delete</a></div>
+				<a href="creare_articol.jsp?id=<%= article.getId() %>">Editare</a> /
+				<a href ="javascript:deleteArticle(<%= article.getId() %>)"> Eliminare</a></div>
 			<div> 
 				<%=article.getTitle() %>
 			</div>

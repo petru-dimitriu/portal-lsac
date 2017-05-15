@@ -82,7 +82,10 @@
 
 		<%@ include file="menu.jsp"%>
 
-		<%@ include file="header_article.jsp"%>
+		<div id="upperThird">
+		<div id="title">Panoul administratorului</div>
+		</div>
+
 
 		<div id="innerBody">
 
