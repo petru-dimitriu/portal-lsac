@@ -8,6 +8,13 @@ public class Poll {
 	private String title;
 	private Timestamp start, stop;
 	private List<String> options;
+	private List<Integer> values; 
+	public List<Integer> getValues() {
+		return values;
+	}
+	public void setValues(List<Integer> values) {
+		this.values = values;
+	}
 	public int getId() {
 		return id;
 	}

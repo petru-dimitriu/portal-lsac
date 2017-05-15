@@ -1,4 +1,4 @@
- <link rel="stylesheet" type="text/css" href="style/css/style_headers.css"> 
+<link rel="stylesheet" type="text/css" href="style/css/style_headers.css"> 
 <link rel="stylesheet" type="text/css" href="style/css/styleVotes.css"> 
  <%@page import="com.tip.connection.SqlConnection, java.sql.*, java.util.*, com.tip.data.*" %>
  
