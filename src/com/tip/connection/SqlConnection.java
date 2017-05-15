@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.tip.data.Article;
 import com.tip.data.SessionUser;
 import com.tip.data.User;
 
@@ -210,14 +211,26 @@ public class SqlConnection {
 			}
 			return rs;
 		}
-		public ResultSet getArticles(){
+		public List<Article> getArticles(){
+			List<Article> result = null;
 			try{
 				selectArticles = con.prepareStatement("SELECT * FROM articles");
-				rs = selectArticles.executeQuery();					
+				rs = selectArticles.executeQuery();
+				result = new ArrayList<Article>();
+				while (rs.next())
+				{
+					Article currentArticle = new Article();
+					currentArticle.setId(rs.getInt("id"));
+					currentArticle.setContents(rs.getString("content"));
+					currentArticle.setTitle(rs.getString("title"));
+					currentArticle.setTimestamp(rs.getTimestamp("postDate"));
+					currentArticle.setUserId(rs.getInt("user_id"));
+					result.add(currentArticle);
+				}
 			}catch (Exception ex){
 				System.out.println(ex);
 			}
-			return rs;
+			return result;
 		}
 		public ResultSet getSondaje(){
 			try{

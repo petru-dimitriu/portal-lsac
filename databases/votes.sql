@@ -1,0 +1,1 @@
+﻿create table votes (id_user int, id_poll int, id_ans int)
