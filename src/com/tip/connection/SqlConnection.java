@@ -133,7 +133,6 @@ public class SqlConnection {
 			String sql = "INSERT INTO articles"
 						+ "(title, content, user_id)"
 						+ "values (\""+title+"\", \""+content+"\", \""+id+"\" )" ;
-			System.out.print(sql);
 			st.executeUpdate(sql);
 			}catch(Exception e){
 				e.printStackTrace();
@@ -165,6 +164,7 @@ public class SqlConnection {
 			Statement st = con.createStatement();
 			String sql = "UPDATE articles SET title = " + "\"" +title + "\"" +"," + "content =" + "\"" +content + "\"" + "WHERE id = " + id;
 			st.executeUpdate(sql);
+			st.close();
 			}catch(Exception e){
 				e.printStackTrace();
 			}
@@ -175,6 +175,7 @@ public class SqlConnection {
 			Statement st = con.createStatement();
 			String sql = "DELETE FROM users WHERE name = " + "\"" +name + "\"";
 			st.executeUpdate(sql);
+			st.close();
 			}catch(Exception e){
 				e.printStackTrace();
 			}
@@ -185,6 +186,7 @@ public class SqlConnection {
 			Statement st = con.createStatement();
 			String sql = "DELETE FROM articles WHERE id =" + id;
 			st.executeUpdate(sql);
+			st.close();
 			}catch(Exception e){
 				e.printStackTrace();
 			}
@@ -225,6 +227,46 @@ public class SqlConnection {
 				System.out.println(ex);
 			}
 			return rs;
+		}
+		public boolean hasUserVotedFor(int userId, int pollId)
+		{
+			long result = -1;
+			Statement statement;
+			try {
+				statement = con.createStatement();
+				ResultSet rs = statement.executeQuery("SELECT COUNT(*) FROM votes WHERE id_user = " + userId + " AND id_poll = " + pollId);
+				rs.next();
+				result = rs.getLong(1);
+				statement.close();
+				
+			}
+			catch (Exception ex)
+			{
+				System.out.println("Eroare in hasUserVotedFor" + ex);
+			}
+			
+			if (result == 1)
+				return true;
+			else
+				return false;
+		}
+		public void registerVote(int userId, int pollId, int answerId)
+		{
+			try {
+			Statement statement = con.createStatement();
+			if (hasUserVotedFor(userId,pollId))
+			{
+				statement.executeUpdate("DELETE FROM votes WHERE id_user = " + userId + " AND id_poll = " + pollId);
+			}
+			String sql = "INSERT INTO votes "
+					+ "values ("+userId+", "+pollId+", "+answerId+")";
+			statement.executeUpdate(sql);
+			statement.close();
+			}
+			catch (Exception ex)
+			{
+				System.out.println("Eroare in registerVote:" + ex);
+			}
 		}
 		//		public static boolean close(Connection c){
 //			try{

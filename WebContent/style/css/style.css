@@ -123,3 +123,10 @@ h1 {
   flex-shrink: 1;
   flex-grow: 1;
 }
+#rightFloater {
+  float: right;
+  text-align: right;
+}
+.msg {
+  color: green;
+}
