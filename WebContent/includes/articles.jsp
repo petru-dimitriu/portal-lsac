@@ -14,7 +14,7 @@
 				<br> 
 			<%	out.print(articles.getDate("postDate")); %>
 				<br>
-			<%	out.print(articles.getString("username")); %>
+			<%	out.print(articles.getString("user_id")); %>
 				<br> <br> <br>
 				<a href="article.jsp?id=<%= articles.getString("id") %>" class="button"> Citeste </a>
 				</div>

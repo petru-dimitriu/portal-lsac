@@ -39,7 +39,7 @@ User user = new SqlConnection().getUserInfo(id);
     		 			<ul>
 
     		 				<%
-    		 				ResultSet articles = new SqlConnection().getArticlesByAuthor(id);
+    		 				ResultSet articles = new SqlConnection().getArticlesById(id);
     		 				boolean hasAnyArticles = false;
     		 				while(articles.next())
     		 				{
@@ -62,6 +62,7 @@ User user = new SqlConnection().getUserInfo(id);
     		 String id2 = (String)session.getAttribute("id");
     		  if(id2.equals (id1))
     		  { %>
+    		  
     		  	<a href="creare_articol.jsp" class="button_articol"> Creare articol </a>
     		  <%} %>
     		 

@@ -127,6 +127,20 @@ public class SqlConnection {
 			}
 			
 		}
+		public void addArticle(String title, String content, int id) {
+			try{
+			Statement st = con.createStatement();
+			String sql = "INSERT INTO articles"
+						+ "(title, content, user_id)"
+						+ "values (\""+title+"\", \""+content+"\", \""+id+"\" )" ;
+			System.out.print(sql);
+			st.executeUpdate(sql);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+		}
+		
 		public ResultSet getUsers(){
 			try{
 				PreparedStatement selectUsers = con.prepareStatement("SELECT * FROM users");
@@ -135,6 +149,28 @@ public class SqlConnection {
 				System.out.println(ex);
 			}
 			return rs;
+		}
+		public void updateUser(String name, String email, int id) {
+			try{
+			Statement st = con.createStatement();
+			String sql = "UPDATE users SET name = " + "\"" +name + "\"" +"," + "email =" + "\"" +email + "\"" + "WHERE id_user = " + id;
+			System.out.print(sql);
+			st.executeUpdate(sql);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+		}
+		public void deleteUser(String name) {
+			try{
+			Statement st = con.createStatement();
+			String sql = "DELETE FROM users WHERE name = " + "\"" +name + "\"";
+			System.out.print(sql);
+			st.executeUpdate(sql);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
 		}
 		public ResultSet getArticles(int id) {
 			try {
@@ -145,9 +181,9 @@ public class SqlConnection {
 			}
 			return rs;
 		}
-		public ResultSet getArticlesByAuthor(int id) {
+		public ResultSet getArticlesById(int id) {
 			try {
-				selectArticles = con.prepareStatement("SELECT * FROM articles a, users u WHERE a.username=u.name AND u.id_user = " + id );
+				selectArticles = con.prepareStatement("SELECT * FROM articles a WHERE a.user_id= " + id );
 				rs = selectArticles.executeQuery();
 			} catch (Exception ex) {
 				System.out.println(ex);

@@ -3,10 +3,10 @@
 <%@page import="com.tip.connection.*, java.sql.*" %>
 <div id = "innerBody">
 	
-		<form method="post">
-		
-		Titlu:     <input type="text" name="titlu"><br><br>
-		Conținut:<br>    <textarea rows="10" cols="50"></textarea><br>
+		<form method="post" action="AddArticle">
+		<input type="hidden" name="id" value="${sessionScope.id}">
+		Titlu:     <input type="text" name="title"><br><br>
+		Conținut:<br>    <textarea name="content" rows="10" cols="50"></textarea><br>
 		<input type="submit" value="Trimite">
 		</form>	
 </div>

@@ -27,7 +27,7 @@
 			<div id="underTitle">
 				<%	out.print("Data postării:  " + articles.getDate("postDate")); %>
 				<br>
-				<%	out.print("Postat de:  " + articles.getString("username")); %>
+				<%	out.print("Postat de:  " + articles.getString("user_id")); %>
 			</div>
 
 		</div>
