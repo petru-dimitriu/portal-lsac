@@ -202,6 +202,15 @@ public class SqlConnection {
 			}
 			return rs;
 		}
+		public ResultSet getArticlesAdmin() {
+			try {
+				selectArticles = con.prepareStatement("SELECT * FROM articles ");
+				rs = selectArticles.executeQuery();
+			} catch (Exception ex) {
+				System.out.println(ex);
+			}
+			return rs;
+		}
 		public Article getArticle(int id) {
 			Article currentArticle = null;
 			try {

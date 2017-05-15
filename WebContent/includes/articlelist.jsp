@@ -4,7 +4,7 @@
 
 
 
-	<%ResultSet articles = new SqlConnection().getArticles();%>
+	<%ResultSet articles = new SqlConnection().getArticlesAdmin();%>
 	<h1 style="text-align:center">Lista articole</h1>
 	<%while(articles.next()){%>
 		<div id="userBox">
