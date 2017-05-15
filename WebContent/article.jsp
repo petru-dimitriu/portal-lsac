@@ -23,7 +23,7 @@
 		<div id="upperThird">
 			<%
 				SqlConnection conn = new SqlConnection();
-					Article article = conn.getArticle(id);
+				Article article = conn.getArticle(id);
 			%>
 			<div id="title">
 				<%
@@ -45,8 +45,18 @@
 				</a>
 			</div>
 		</div>
-
+			
 		<div id="innerBody">
+		<%
+		int userId = Integer.parseInt((String)session.getAttribute("id"));
+		if (userId == article.getUserId()) // este articolul userului logat
+		{
+		%>
+		<a href="creare_articol.jsp?id=<%=article.getId()%>"><div class="button"> Editeaza acest articol </div></a>
+		<%
+		}
+		%>
+		
 			<%
 				out.print(article.getContents());
 			%>

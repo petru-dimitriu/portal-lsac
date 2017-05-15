@@ -68,7 +68,7 @@
 			%>
 			</h1>
 
-			<ul>
+			<table>
 
 				<%
 					ResultSet articles = new SqlConnection().getArticlesById(id);
@@ -76,11 +76,11 @@
 						while (articles.next()) {
 							hasAnyArticles = true;
 				%>
-				<li> <a href="article.jsp?id=<%=articles.getInt("id") %>">
+				<tr><td> <a href="article.jsp?id=<%=articles.getInt("id") %>">
 					<%
 						out.print(articles.getString("title"));
 					%>
-				</a> </li>
+				</a> </td></tr>
 				<%
 					}
 						if (!hasAnyArticles) {
@@ -91,7 +91,7 @@
 				%>
 
 
-			</ul>
+			</table>
 			</p>
 			<%
 				String id1 = (String) request.getParameter("id");
