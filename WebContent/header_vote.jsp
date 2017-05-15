@@ -5,5 +5,5 @@
 	pageEncoding="UTF-8"%>
 
 <div id="upperThird">
-	<div id="title">Liga votează!</div>
+	<div id="title">Sondaje active</div>
 </div>
