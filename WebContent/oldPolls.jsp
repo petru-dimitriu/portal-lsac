@@ -8,7 +8,7 @@
 <head>
 <title>Liga votează!</title>
 <meta charset="utf-8">
-<link href="style/css/styleVote.css" rel="stylesheet">
+<link href="style/css/styleVotes.css" rel="stylesheet">
 </head>
 <body>
 	<div id="body">

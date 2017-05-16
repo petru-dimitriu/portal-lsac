@@ -394,4 +394,18 @@ public class SqlConnection {
 			
 		}
 		
+		public void addPoll(String title, String options, String stopDate)
+		{
+			String[] opts = options.split(",");
+			try{
+				Statement st = con.createStatement();
+				String sql = "INSERT INTO sondaje VALUES (DEFAULT, '" + title + "', NOW(), '" + stopDate + "', " + opts.length + ", '" + options + "')";
+				System.out.println(sql);
+				st.executeUpdate(sql);
+				st.close();
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+		}
+		
 }
