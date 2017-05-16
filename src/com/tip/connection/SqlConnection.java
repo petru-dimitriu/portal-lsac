@@ -320,7 +320,7 @@ public class SqlConnection {
 				if (active)
 					query += "WHERE now() < stopSondaj ORDER BY stopSondaj DESC";
 				else
-					query += "WHERE now() > stopSondaj ORDER BY stopSondaj DESC LIMIT 5";
+					query += "WHERE now() > stopSondaj ORDER BY stopSondaj DESC";
 				
 				selectArticles = con.prepareStatement(query);
 				rs = selectArticles.executeQuery();

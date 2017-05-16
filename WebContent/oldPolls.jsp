@@ -21,7 +21,7 @@
 
 		<div id="innerBody">
 		
-		<h1> Ultimele 5 sondaje incheiate</h1>
+		<h1> Rezultatele sondajelor incheiate</h1>
 		
 			<%
 				SqlConnection conn = new SqlConnection();
@@ -51,7 +51,9 @@
 							sum += val;
 						for (int i = 0 ; i < options.size(); i++)
 						{
-							out.print(options.get(i) + " ( " + Math.round((vals.get(i) / sum)) * 100  + "% ) / ");
+							out.print(options.get(i) + " ( " + Math.round((vals.get(i) / sum)) * 100  + "% ) ");
+							if (i < options.size() - 1)
+								out.print (" / ");
 						}
 					%>
 				</p>

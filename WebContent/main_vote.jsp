@@ -86,8 +86,6 @@
 
 		<div></div>
 	</div>
-	<br>
-	<br>
 
 	<%
 		indexSondaj++;
@@ -99,5 +97,7 @@
 			countTimeFor("stop" + i, countDownDate[i]);
 		}
 	</script>
+	
+	<a href="oldPolls.jsp"><p class="button"> Vezi rezultatele sondajelor vechi </p></a> 
 
 </div>
