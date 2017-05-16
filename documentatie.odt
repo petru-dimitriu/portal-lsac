@@ -1,0 +1,20 @@
+﻿Documentație Etapa 3
+
+Dificultățile
+	Dificultățile întâmpinate au fost, în principal, tehnice. Procesul de configurarea a serverului a fost de multe ori anevoios și îndelungat. De asemenea, de câteva ori rezolvarea conflictelor generate de sistemul de versionare a necesitat o atenție sporită. Nu în ultimul rând, gestionarea timpului s-a dovedit a fi defectuoasă.
+
+Contribuțiile
+	Petru s-a ocupat de gestionarea activității, dând direcții de dezvoltare, sfaturi, dar și realizând părți mari atât din front- cât și din back-end (de exemplu, pagina Sondajelor încheiate, paginile de gestionarea a Articolelor și Sondajelor din Panoul de administrare).
+	Ionuț s-a ocupat îndeosebi de back-end, realizând conexiuni la baza de date, scripturi pentru crearea tabelelor dar atuncând și mici contribuții la partea de front-end.
+	Monalisa a realizat, printre altele, pagina Ultimele articole împreună cu stilurile aferente și câteva scripturi pentru baza de date.
+	Adelina a realizat, printre altele, pagina de Sondaje active cu stilurile aferente și countdown-ul aferent sondajelor active.
+
+Aprecieri
+	Liderul (Petru) a fost bineintenționat dar ineficient, cel mai mare neajuns al său fiind incapacitatea de a estima ritmul de lucru al echipei, defect care s-a dovedit catastrofal.
+	Ceilallti membri ai echipei au arătat interes constant pentru a-și îmbogăți cunoștințele și abilitățile, învățând repede și colaborând eficient. Structura neomogenă a codului relevă diferențele semnificative de abordare față de îndeletnicirea programării între membri.
+
+Concluzii
+	Aplicația este vădit incompletă, însă este funcțională iar extinderea ei este posibilă și de dorit.
+
+Bibliografie
+	Pentru realizarea proiectului, s-au folosit ca surse de informare diverse tutoriale disponibile online, documentația oficială Oracle Java și, în mod notabil, frânturi de cod publicate pe site-ul StackOverflow.
