@@ -21,4 +21,3 @@ Sondajele sunt pornite doar de către admini, sunt constrânse de timp și pot f
   
 Înscrierea și promovarea membrilor se face doar de către administratori. 
   
-Mai multe detalii punctuale se găsesc în fișierul SPECS.md. 
