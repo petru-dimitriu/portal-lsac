@@ -382,4 +382,16 @@ public class SqlConnection {
 			return result;
 		}
 		
+		public void deletePoll(int id) {
+			try{
+			Statement st = con.createStatement();
+			String sql = "DELETE FROM sondaje WHERE id = " + "\"" +id+ "\"";
+			st.executeUpdate(sql);
+			st.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+		}
+		
 }

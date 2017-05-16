@@ -95,7 +95,6 @@
 				<input type="button" id="b3" value="Administrare poll">
 			</div>
 
-		</div>
 		<br>
 
 		<div id="target"></div>
@@ -112,9 +111,14 @@
 					$("#target").load("includes/articlelist.jsp");
 				});
 			});
+			$(document).ready(function() {
+				$("#b3").click(function() {
+					$("#target").load("includes/pollList.jsp");
+				});
+			});
 		</script>
 
-	</div>
+	
 	<%@ include file="footer.jsp"%>
 
 	<%
@@ -125,5 +129,7 @@
 		response.sendRedirect("/index.jsp");
 	}
 	%>
+	</div>
+	</div>
 </body>
 </html>
